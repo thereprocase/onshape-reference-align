@@ -7,11 +7,10 @@ Scale and rotate a reference image using distances and directions you know.
 
 ## Get the desktop app
 
-The public download destination is
-[GitHub Releases](https://github.com/thereprocase/onshape-reference-align/releases).
-Publication and native macOS verification are pending. A link here does not
-mean a release has already been published; use the status and assets on the
-release page when it becomes available.
+Download from [GitHub Releases](https://github.com/thereprocase/onshape-reference-align/releases).
+Native Windows, Linux, Apple Silicon Mac and Intel Mac builds pass automated
+tests and packaged-app smoke checks. Read the release notes for verification
+details and remaining first-launch/user-testing limits.
 
 Choose the ZIP for Windows, Linux, Mac Apple Silicon, or Mac Intel under
 **Assets**. The automatically generated **Source code** downloads are for
@@ -56,7 +55,7 @@ Windows). Open **START-REFERENCE-ALIGN.cmd** (Windows),
 Keep its app window open while you work in the browser.
 Open **START-HERE.html** in the extracted folder for the complete
 offline guide. The [project website](https://thereprocase.github.io/onshape-reference-align/)
-provides the browser-readable guide when GitHub Pages is deployed; the HTML file
+provides the browser-readable guide; the HTML file
 in the source tree is its source, not a rendered GitHub documentation page.
 
 The connection wizard guides you through creating an Onshape API key and
@@ -64,9 +63,9 @@ entering it in the app. You do not need Node, a terminal, credential-file edits,
 or an Onshape extension registration for the standalone app.
 
 Use the public [release page](https://github.com/thereprocase/onshape-reference-align/releases)
-for downloads and checksums once publication completes. macOS packages are
-prepared separately for Apple Silicon and Intel; native Mac build and launch
-verification remain pending until the corresponding release jobs finish.
+for downloads and checksums. macOS packages are built and smoke-tested natively
+for both Apple Silicon and Intel. An unaided real-person first-launch test
+remains outstanding; automated checks do not validate desktop trust prompts.
 See
 [`docs/DISTRIBUTION.md`](docs/DISTRIBUTION.md) for the SmartScreen/Gatekeeper
 prompt an unsigned binary shows the first time, how to verify the download

@@ -1,9 +1,21 @@
 # Verification record
 
-Latest onboarding/package acceptance: [0.2.1 release record](RELEASE-0.2.1.md).
-685 tests plus HTTP smoke pass. Windows/Linux packaged launch and private
-Tailscale downloads are verified; macOS native launch and real-person usability
-are explicitly not claimed.
+Latest public release: [v0.2.3](https://github.com/thereprocase/onshape-reference-align/releases/tag/v0.2.3).
+The [native release workflow](https://github.com/thereprocase/onshape-reference-align/actions/runs/34003423109)
+passed 686 tests, HTTP smoke, executable builds and packaged-app smoke on
+Windows x64, Linux x64, macOS Apple Silicon and macOS Intel. Packaged-app checks
+use an isolated Onshape stub and cover setup, busy-port recovery, upload,
+installation on Front, replane to Right and backup creation. They do not
+constitute new live Onshape verification or desktop trust-prompt testing.
+Unaided real-person first-launch usability remains unverified.
+
+The public repository is a clean snapshot with independently reviewed source,
+sanitized capture identifiers and personal metadata, and no private development
+history. See [capture privacy](CAPTURE-PRIVACY.md) for fixture limitations.
+
+Earlier local onboarding/package acceptance is preserved in the
+[0.2.1 release record](RELEASE-0.2.1.md); its Mac limitations describe that
+historical package, not the later native CI builds.
 
 ## Automated checks
 

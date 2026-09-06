@@ -1,16 +1,16 @@
 # Distribution
 
-The public destination is
+Download the published desktop packages from
 [thereprocase/onshape-reference-align Releases](https://github.com/thereprocase/onshape-reference-align/releases).
-Publication is pending; this document describes the intended download and build
-workflow, not a completed public release or a successful CI run.
+The [v0.2.3 native release workflow](https://github.com/thereprocase/onshape-reference-align/actions/runs/34003423109)
+passed on all four target platforms and published the ZIPs and checksums.
 
 The release workflow builds desktop ZIPs on Windows x64, Linux x64, Mac Apple
 Silicon and Mac Intel runners. Each ZIP contains a launcher, the application,
 an offline START-HERE guide, and licenses. Choose the platform ZIP under
 **Assets**, not GitHub's automatically generated **Source code** archive.
-No Node installation is required. Native macOS build and launch verification
-remain pending until those release jobs finish successfully.
+No Node installation is required. Native executable build and automated launch
+checks passed on both Mac architectures as well as Windows and Linux.
 
 CI uses Node's
 [Single Executable Application](https://nodejs.org/api/single-executable-applications.html)
@@ -28,7 +28,8 @@ launcher: `START-REFERENCE-ALIGN.cmd` on Windows,
 `START-REFERENCE-ALIGN.command` on macOS, or `START-REFERENCE-ALIGN.sh` on Linux.
 Choose the Apple Silicon or Intel package to match your Mac. Keep all extracted
 files together, and keep the launcher’s app window open while using the browser.
-Every platform package includes its runtime. Native Mac launch verification is pending.
+Every platform package includes its runtime. An unaided real-person first-launch
+test remains outstanding; CI does not verify desktop trust prompts.
 
 The browser opens the local app. If it does not, copy the full local URL printed
 in the app window. The Connection wizard walks through creating, testing and
