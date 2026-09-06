@@ -1,6 +1,6 @@
 {
   "name": "onshape-reference-align",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "type": "module",
   "description": "Pixel-pair scale and rotation calibration for Onshape reference images.",

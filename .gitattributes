@@ -1,0 +1,6 @@
+# Generated manifests and JavaScript checks compare exact bytes across hosts.
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.png -text
+*.jpg -text
+*.zip -text

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.3
+
+- Preserve LF source/manifests on Windows Git checkouts so generated-asset
+  verification is identical across platforms; Windows launchers retain CRLF.
+- Supersedes the initial 0.2.2 release attempt, whose Windows checkout failed
+  before building. No 0.2.2 binary release was published.
+
 ## 0.2.2
 
 - Prepare the initial public repository with contribution, security and conduct
