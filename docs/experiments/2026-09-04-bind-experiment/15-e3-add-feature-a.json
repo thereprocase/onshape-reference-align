@@ -1,0 +1,198 @@
+{
+  "name": "e3-add-feature-a",
+  "method": "POST",
+  "path": "/partstudios/d/a11ce0000000000000000039/w/a11ce0000000000000000052/e/a11ce0000000000000000027/features",
+  "note": {
+    "planeVariant": "a",
+    "description": "captured qCompressed Top-plane queryString with deterministicIds [\"JDC\"]"
+  },
+  "requestBody": {
+    "btType": "BTFeatureDefinitionCall-1406",
+    "feature": {
+      "btType": "BTMFeature-134",
+      "featureType": "referenceImage",
+      "name": "Calibrated Reference Image 1",
+      "namespace": "ea11ce0000000000000000114::ma11ce0000000000000000030",
+      "parameters": [
+        {
+          "btType": "BTMParameterReferenceImage-2014",
+          "namespace": "ea11ce0000000000000000120::ma11ce0000000000000000010",
+          "parameterId": "image",
+          "elementLibraryData": null
+        },
+        {
+          "btType": "BTMParameterQueryList-148",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S3.7$TopplaneOpS9$queryTypeS5$DUMMY\",id);",
+              "deterministicIds": [
+                "JDC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "parameterId": "plane"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0.25 m",
+          "parameterId": "imageWidth"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 deg",
+          "parameterId": "imageAngle"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "parameterId": "originX"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "parameterId": "originY"
+        }
+      ]
+    },
+    "serializationVersion": "1.2.21",
+    "sourceMicroversion": "a11ce0000000000000000054",
+    "libraryVersion": 3070,
+    "rejectMicroversionSkew": false
+  },
+  "status": 200,
+  "responseBody": {
+    "btType": "BTFeatureDefinitionResponse-1617",
+    "rejectMicroversionSkew": false,
+    "microversionSkew": false,
+    "featureState": {
+      "btType": "BTFeatureState-1688",
+      "featureStatus": "OK",
+      "inactive": false
+    },
+    "feature": {
+      "btType": "BTMFeature-134",
+      "name": "Calibrated Reference Image 1",
+      "suppressed": false,
+      "parameters": [
+        {
+          "btType": "BTMParameterReferenceImage-2014",
+          "elementLibraryData": null,
+          "libraryRelationType": "DEFAULT",
+          "namespace": "ea11ce0000000000000000120::ma11ce0000000000000000010",
+          "nodeId": "MyO1O5xHBQgyPcLyK",
+          "parameterId": "image",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQueryList-148",
+          "libraryRelationType": "DEFAULT",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S3.7$TopplaneOpS9$queryTypeS5$DUMMY\",id);",
+              "nodeId": "ML7gvoviCIOcIviFu",
+              "deterministicIds": [
+                "JDC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "nodeId": "Msl9WxVeASffYj3wR",
+          "parameterId": "plane",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "libraryRelationType": "DEFAULT",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0.25 m",
+          "nodeId": "MvmNFzaa8SGt5o2Vq",
+          "parameterId": "imageWidth",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "libraryRelationType": "DEFAULT",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 deg",
+          "nodeId": "MUWW2Qm6GsYHYDKKR",
+          "parameterId": "imageAngle",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "libraryRelationType": "DEFAULT",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "nodeId": "M/sE9Bb5RSFqlhZG6",
+          "parameterId": "originX",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "libraryRelationType": "DEFAULT",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "nodeId": "MCBgboXOmc2ZawoH2",
+          "parameterId": "originY",
+          "parameterName": ""
+        }
+      ],
+      "namespace": "ea11ce0000000000000000114::ma11ce0000000000000000030",
+      "featureId": "FycByd6CdezIhLo_0",
+      "nodeId": "MnlguVoEJ2FYpsz0p",
+      "featureType": "referenceImage",
+      "returnAfterSubfeatures": false,
+      "subFeatures": [],
+      "parameterLibraries": [],
+      "suppressionState": null
+    },
+    "serializationVersion": "1.2.21",
+    "sourceMicroversion": "a11ce0000000000000000134",
+    "libraryVersion": 0
+  }
+}

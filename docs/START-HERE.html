@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start here · Reference Align</title>
+  <style>
+    :root { color-scheme: light; font: 17px/1.6 system-ui, sans-serif; color: #172b30; background: #f2f6f5; }
+    body { margin: 0; }
+    main { max-width: 760px; margin: auto; padding: 36px 22px 64px; }
+    header { margin-bottom: 30px; }
+    h1 { font-size: clamp(2rem, 7vw, 3rem); line-height: 1.1; margin: 8px 0 16px; }
+    h2 { font-size: 1.25rem; line-height: 1.3; margin: 0 0 12px; }
+    p { margin: 10px 0; }
+    .label { color: #35675f; font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    section { padding: 24px; margin: 18px 0; background: white; border: 1px solid #d7e2df; border-radius: 12px; }
+    ol, ul { padding-left: 24px; }
+    li { margin: 10px 0; }
+    a { color: #00685b; text-underline-offset: 3px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid #087d70; outline-offset: 4px; }
+    code { overflow-wrap: anywhere; font-size: .92em; background: #edf2f0; padding: 2px 5px; border-radius: 4px; }
+    .note { border-left: 3px solid #b57e23; padding-left: 14px; }
+    details { margin: 18px 0; }
+    summary { cursor: pointer; font-weight: 650; }
+    footer { color: #46625d; font-size: .9rem; margin-top: 26px; }
+    @media (max-width: 480px) { main { padding: 24px 14px; } section { padding: 19px; } }
+    @media print { body { background: white; } section { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="label">Reference Align · Windows, macOS and Linux</p>
+    <h1>Your photo, at the right scale and angle.</h1>
+    <p>Use a known distance in a photo to size it in Onshape. Pick a second line to set its angle. You can use the same pair of points for both.</p>
+    <p>This guide opens without an internet connection. Connecting to Onshape needs the internet.</p>
+  </header>
+
+  <section aria-labelledby="launch">
+    <h2 id="launch">1. Extract and open</h2>
+    <ol>
+      <li>Download the package for your computer. On a Mac, choose <strong>Apple Silicon</strong> for an M-series chip or <strong>Intel</strong> for an Intel processor; check <strong>Apple menu → About This Mac</strong> if unsure.</li>
+      <li>Extract the whole ZIP. On Windows, right-click it and choose <strong>Extract All… → Extract</strong>. On macOS, double-click the ZIP. On Linux, use your archive manager’s <strong>Extract</strong> action.</li>
+      <li>In the extracted folder, open <strong>START-REFERENCE-ALIGN.cmd</strong> (Windows), <strong>START-REFERENCE-ALIGN.command</strong> (macOS), or <strong>START-REFERENCE-ALIGN.sh</strong> (Linux). Keep the folder contents together. Run the launcher from this folder, not from inside the ZIP.</li>
+      <li>Your browser opens Reference Align. <strong>Keep the small Reference Align app window open</strong> while you work; minimizing it is fine.</li>
+    </ol>
+    <p>The browser page talks to the app on your own computer. Its address starts with <code>http://127.0.0.1:</code>. You do not need a website, a developer account for hosting, or any programming tools.</p>
+    <p class="note">These packages do not have a trusted publisher signature. Read the launch help below if your computer blocks the app. No system security settings need to be turned off.</p>
+  </section>
+
+  <section aria-labelledby="connect">
+    <h2 id="connect">2. Connect your Onshape account once</h2>
+    <p>The <strong>Connection</strong> panel opens on first use. Onshape requires an API key so this app can read and update your document; this account step cannot be skipped when writing to Onshape.</p>
+    <ol>
+      <li>Use the panel’s link to <a href="https://dev-portal.onshape.com/keys" target="_blank" rel="noopener noreferrer">Onshape’s API keys page</a>. Sign in with the account that can edit your document.</li>
+      <li>Create a key. Enable <strong>Read documents</strong> and <strong>Write documents</strong>. Leave the other permissions off.</li>
+      <li>Copy the <strong>access key</strong> and <strong>secret key</strong> into the matching boxes in Reference Align. Copy both before closing Onshape’s key dialog: the secret is shown only once.</li>
+      <li>Press <strong>Test connection</strong>, then <strong>Save and continue</strong>.</li>
+    </ol>
+    <p>The app saves the connection on this computer. You do not need to create or edit a credentials file. Keep the key private; do not put it in a screenshot or send it with a support request.</p>
+    <p>Choose <strong>Try an image without connecting</strong> to preview calibration with local images first. Writing to your Part Studio requires the connection.</p>
+  </section>
+
+  <section aria-labelledby="image">
+    <h2 id="image">3. Choose your document, photo and plane</h2>
+    <ol>
+      <li>Open the intended <strong>Part Studio</strong> in Onshape and copy its address from the browser. Use the editable workspace, not a saved version.</li>
+      <li>In Reference Align’s <strong>Document</strong> panel, paste the address and press <strong>Load this document</strong>.</li>
+      <li>Press <strong>Load local image</strong> and choose your photo, then reopen <strong>Document</strong> from the rail (or top bar on a narrow window). If the photo is already an image tab in the document, reopen Document and choose that image instead.</li>
+      <li>Choose the <strong>Plane</strong>: Top, Front, Right, your own plane, or the same plane as a sketch.</li>
+      <li>Press <strong>Install into this document</strong> and confirm. The app uploads the chosen local image if needed and creates the calibrated reference feature.</li>
+      <li>If the photo is not visible in the center, press <strong>Load selected Onshape image</strong> before picking points. This is needed when you chose an existing image tab instead of loading a local file.</li>
+    </ol>
+    <p>If a calibrated reference already exists, select it under <strong>Target</strong>. Use <strong>Load selected Onshape image</strong> if the photo is not yet visible. You only need to install the feature once in that Part Studio.</p>
+    <p>No manual FeatureScript copying or right-panel extension setup is needed for this workflow. Keep Onshape and Reference Align open in separate browser tabs.</p>
+  </section>
+
+  <section aria-labelledby="calibrate">
+    <h2 id="calibrate">4. Scale, rotate, preview, apply</h2>
+    <ol>
+      <li><strong>Scale:</strong> pick S1 and S2 on two pixels whose real distance you know. Enter that distance and its unit.</li>
+      <li><strong>Rotation:</strong> open the Rotation section. Use S1 → S2, or turn that switch off and pick R1 and R2 along a line whose direction you know. Choose horizontal, vertical or the angle you want.</li>
+      <li><strong>Anchor:</strong> choose the point that should stay fixed while the image is calibrated.</li>
+      <li>Press <strong>Preview calibration</strong>. Inspect the image and calculated values. Change the picks if needed, then preview again.</li>
+      <li>Press <strong>Apply to Onshape</strong> and confirm. The feature updates in your Part Studio; the app saves a backup before changing it.</li>
+    </ol>
+    <p>Changing the image’s plane clears the old preview. Preview again before applying calibration on its new plane.</p>
+    <p>If Onshape now shows the same photo twice, Reference Align may offer to hide the old image’s sketch. Suppression hides the whole sketch, including any other geometry in it; use it only when that is what you want.</p>
+  </section>
+
+  <section aria-labelledby="help">
+    <h2 id="help">If something gets in the way</h2>
+    <details>
+      <summary>Windows does not recognize the app</summary>
+      <p>This build has no trusted signing certificate, so Windows may show “Windows protected your PC.” Only proceed if you trust the source you obtained it from. Where Windows permits it, <strong>More info → Run anyway</strong> opens an unsigned app. On a managed computer, ask your administrator if that option is unavailable.</p>
+      <p>A checksum can detect a changed download when compared with a value obtained from a trusted source. A ZIP and checksum supplied together by an unknown sender do not establish who made the app or whether it is safe. Do not disable antivirus to run it.</p>
+    </details>
+    <details>
+      <summary>macOS blocks the launcher</summary>
+      <p>Only proceed if you trust the download’s source. After trying to open <strong>START-REFERENCE-ALIGN.command</strong>, go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong> if that option is offered, then confirm. This approves that app, not every downloaded app. See <a href="https://support.apple.com/en-us/102445" target="_blank" rel="noopener noreferrer">Apple’s official instructions</a>. If the option is unavailable, ask your administrator or report the exact warning. Do not disable Gatekeeper or remove security protections.</p>
+      <p>Use the Apple Silicon package for an M-series Mac and the Intel package for an Intel Mac. Keep all extracted files beside the launcher, including any <strong>app</strong> and <strong>runtime</strong> folders supplied in your package; you do not need to install Node.</p>
+    </details>
+    <details>
+      <summary>Linux opens the launcher as text or says permission denied</summary>
+      <p>Right-click <strong>START-REFERENCE-ALIGN.sh</strong>, open <strong>Properties → Permissions</strong>, and allow this file to run as a program. Do the same for <strong>reference-align</strong> if necessary. Then choose <strong>Run</strong> or <strong>Run in Terminal</strong> for the launcher. Names vary by desktop; this changes only the extracted files, not system security settings.</p>
+    </details>
+    <details>
+      <summary>The browser did not open, or the page stopped responding</summary>
+      <p>Check that the Reference Align app window is still open. Copy the full local address printed there into your browser, including its port number. The app chooses another available local port if its normal one is occupied; use the address from this launch.</p>
+      <p>If you closed the app window, open your platform’s <strong>START-REFERENCE-ALIGN</strong> launcher again and use the new page. You can close both the browser tab and app window when finished.</p>
+    </details>
+    <details>
+      <summary>The key test fails</summary>
+      <p>Check that both complete strings are in the correct boxes and that you used the Onshape account that owns or can edit the document. If the secret was lost, create another key. The app’s message distinguishes a rejected key from a connection problem.</p>
+    </details>
+    <details>
+      <summary>Install or Apply is unavailable</summary>
+      <p>Read the reason beside the button. Install needs an image first. Apply needs a selected calibrated feature and a current preview. A saved-version link is read-only; paste the Part Studio’s workspace address instead.</p>
+      <p>Open <strong>Settings</strong> in the rail if an action is switched off. On a narrow window, Connection, Document and Settings are in the top bar.</p>
+    </details>
+    <details>
+      <summary>My plane or sketch is unavailable</summary>
+      <p>A plane or sketch used by an existing reference image must occur before that image in the feature list. Move the feature to a valid position in Onshape, then refresh the Document panel. A plane that cannot be resolved also shows a reason.</p>
+    </details>
+  </section>
+  <footer>This app does not correct perspective or lens distortion in a photograph. Choose a clear reference image and check your result against a second known dimension.</footer>
+</main>
+</body>
+</html>

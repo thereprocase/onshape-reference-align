@@ -1,0 +1,19 @@
+{
+  "main": "dist/bundle.cjs",
+  "output": "dist/sea-prep.blob",
+  "disableExperimentalSEAWarning": true,
+  "useSnapshot": false,
+  "useCodeCache": false,
+  "assets": {
+    "public/app.js": "public/app.js",
+    "public/connection-state.mjs": "public/connection-state.mjs",
+    "public/index.html": "public/index.html",
+    "public/reference-align-icon.png": "public/reference-align-icon.png",
+    "public/reference-align-icon.svg": "public/reference-align-icon.svg",
+    "public/styles.css": "public/styles.css",
+    "public/update-banner.mjs": "public/update-banner.mjs",
+    "public/url-context.mjs": "public/url-context.mjs",
+    "public/write-gates.mjs": "public/write-gates.mjs",
+    "featurescript/ReferenceImage.fs": "featurescript/ReferenceImage.fs"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "route": "/api/upload-image?documentId=a11ce0000000000000000118&workspaceOrVersion=w&workspaceOrVersionId=a11ce0000000000000000049&elementId=a11ce0000000000000000117",
+  "status": 200,
+  "response": {
+    "ok": true,
+    "elementId": "a11ce0000000000000000016",
+    "microversionId": "a11ce0000000000000000097",
+    "name": "acceptance.png",
+    "dataType": "image/png",
+    "mediaType": "image/png",
+    "byteLength": 19698,
+    "declaredTypeMismatch": false,
+    "namespace": "ea11ce0000000000000000016::ma11ce0000000000000000097"
+  }
+}

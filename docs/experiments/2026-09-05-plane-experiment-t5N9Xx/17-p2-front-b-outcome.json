@@ -1,0 +1,35 @@
+{
+  "featureId": "FhVlPDEPnbwsvl0_0",
+  "featureStatus": "OK",
+  "accepted": true,
+  "storedPlane": {
+    "btType": "BTMParameterQueryList-148",
+    "libraryRelationType": "DEFAULT",
+    "queries": [
+      {
+        "btType": "BTMIndividualQuery-138",
+        "queryString": "query=qCreatedBy(makeId(\"Front\"), EntityType.FACE);",
+        "nodeId": "Mr1qeyAoQhQiQ0duP",
+        "deterministicIds": [
+          "JCC"
+        ],
+        "queryStatement": null
+      }
+    ],
+    "filter": {
+      "btType": "BTAndFilter-110",
+      "operand1": {
+        "btType": "BTEntityTypeFilter-124",
+        "entityType": "FACE"
+      },
+      "operand2": {
+        "btType": "BTGeometryFilter-130",
+        "geometryType": "PLANE"
+      }
+    },
+    "nodeId": "MnkqAm7GEBddLinbX",
+    "parameterId": "plane",
+    "parameterName": ""
+  },
+  "captureFile": "15-p2-front-b.json"
+}

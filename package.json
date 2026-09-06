@@ -1,0 +1,18 @@
+{
+  "name": "onshape-reference-align",
+  "version": "0.2.2",
+  "private": true,
+  "type": "module",
+  "description": "Pixel-pair scale and rotation calibration for Onshape reference images.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "test": "node --test",
+    "check": "node --check server.mjs && node --check public/app.js && node --check public/url-context.mjs && node --check public/connection-state.mjs && node --check scripts/build-sea-bundle.mjs && node --check scripts/sea-assets.mjs && node --check scripts/gen-version.mjs && node --check scripts/build-sea.mjs && node --check scripts/smoke-binary.mjs && node --check scripts/check-workflow-yaml.mjs && node scripts/sea-assets.mjs --check && node scripts/gen-version.mjs --check && node scripts/check-workflow-yaml.mjs && node --test && node scripts/smoke.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "e2-fs-create",
+  "method": "POST",
+  "path": "/featurestudios/d/a11ce0000000000000000039/w/a11ce0000000000000000052",
+  "note": null,
+  "requestBody": {
+    "name": "Reference Align Features"
+  },
+  "status": 200,
+  "responseBody": {
+    "name": "Reference Align Features",
+    "id": "a11ce0000000000000000114",
+    "type": "Feature Studio",
+    "elementType": "FEATURESTUDIO",
+    "angleUnits": null,
+    "massUnits": null,
+    "timeUnits": null,
+    "forceUnits": null,
+    "pressureUnits": null,
+    "momentUnits": null,
+    "accelerationUnits": null,
+    "angularVelocityUnits": null,
+    "energyUnits": null,
+    "areaUnits": null,
+    "volumeUnits": null,
+    "densityUnits": null,
+    "frequencyUnits": null,
+    "lengthUnits": null,
+    "filename": null,
+    "thumbnailInfo": null,
+    "thumbnails": null,
+    "microversionId": "a11ce0000000000000000153",
+    "dataType": "onshape/featurestudio",
+    "applicationTarget": null,
+    "foreignDataId": null,
+    "unupdatable": false,
+    "safeToShow": false,
+    "specifiedUnit": null,
+    "prettyType": null,
+    "zip": null
+  }
+}

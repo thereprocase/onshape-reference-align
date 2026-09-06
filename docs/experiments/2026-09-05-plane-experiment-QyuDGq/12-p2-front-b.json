@@ -1,0 +1,193 @@
+{
+  "name": "p2-front-b",
+  "method": "POST",
+  "path": "/partstudios/d/a11ce0000000000000000064/w/a11ce0000000000000000095/e/a11ce0000000000000000154/features",
+  "requestBody": {
+    "btType": "BTFeatureDefinitionCall-1406",
+    "feature": {
+      "btType": "BTMFeature-134",
+      "featureType": "referenceImage",
+      "name": "P2 Front b",
+      "namespace": "ea11ce0000000000000000148::ma11ce0000000000000000152",
+      "parameters": [
+        {
+          "btType": "BTMParameterReferenceImage-2014",
+          "namespace": "ea11ce0000000000000000011::ma11ce0000000000000000093",
+          "parameterId": "image",
+          "elementLibraryData": null
+        },
+        {
+          "btType": "BTMParameterQueryList-148",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCreatedBy(makeId(\"Front\"), EntityType.FACE);"
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "parameterId": "plane"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0.25 m",
+          "parameterId": "imageWidth"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 deg",
+          "parameterId": "imageAngle"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "parameterId": "originX"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "parameterId": "originY"
+        }
+      ]
+    },
+    "serializationVersion": "1.2.21",
+    "sourceMicroversion": "a11ce0000000000000000144",
+    "libraryVersion": 3070,
+    "rejectMicroversionSkew": false
+  },
+  "status": 200,
+  "data": {
+    "btType": "BTFeatureDefinitionResponse-1617",
+    "rejectMicroversionSkew": false,
+    "microversionSkew": false,
+    "featureState": {
+      "btType": "BTFeatureState-1688",
+      "featureStatus": "OK",
+      "inactive": false
+    },
+    "feature": {
+      "btType": "BTMFeature-134",
+      "namespace": "ea11ce0000000000000000148::ma11ce0000000000000000152",
+      "name": "P2 Front b",
+      "suppressed": false,
+      "parameters": [
+        {
+          "btType": "BTMParameterReferenceImage-2014",
+          "elementLibraryData": null,
+          "libraryRelationType": "DEFAULT",
+          "namespace": "ea11ce0000000000000000011::ma11ce0000000000000000093",
+          "nodeId": "M2G+eu1B5ytwKWHZs",
+          "parameterId": "image",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQueryList-148",
+          "libraryRelationType": "DEFAULT",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCreatedBy(makeId(\"Front\"), EntityType.FACE);",
+              "nodeId": "MWdBBssIWMYSBmEjI",
+              "deterministicIds": [
+                "JCC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "nodeId": "Mh94kOscSXJCFCzC0",
+          "parameterId": "plane",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "libraryRelationType": "DEFAULT",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0.25 m",
+          "nodeId": "MTeHIAfr6RpBnwRrQ",
+          "parameterId": "imageWidth",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "libraryRelationType": "DEFAULT",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 deg",
+          "nodeId": "MlgCWVZ5M8ddgwXdO",
+          "parameterId": "imageAngle",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "libraryRelationType": "DEFAULT",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "nodeId": "M7+bqBkGaSyUrJXEx",
+          "parameterId": "originX",
+          "parameterName": ""
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "libraryRelationType": "DEFAULT",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "nodeId": "MauV/9QY8mfidjUwx",
+          "parameterId": "originY",
+          "parameterName": ""
+        }
+      ],
+      "featureId": "FLKg1vE4LtQvzcv_0",
+      "nodeId": "MH+tsE/fsGYw3hK8r",
+      "featureType": "referenceImage",
+      "returnAfterSubfeatures": false,
+      "subFeatures": [],
+      "parameterLibraries": [],
+      "suppressionState": null
+    },
+    "libraryVersion": 0,
+    "serializationVersion": "1.2.21",
+    "sourceMicroversion": "a11ce0000000000000000087"
+  },
+  "ok": true,
+  "featureStatus": "OK"
+}

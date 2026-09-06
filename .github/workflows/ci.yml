@@ -1,0 +1,39 @@
+# Action versions are pinned by full commit SHA, not by tag: a tag can be
+# force-moved after this workflow is reviewed, but a commit SHA cannot. Each
+# SHA below was resolved from the action's own GitHub releases page on
+# 2026-09-05 and should be re-resolved (not copied forward blindly) on any
+# future version bump — see docs/DISTRIBUTION.md for the verification note.
+#   actions/checkout      v7.0.1 — https://github.com/actions/checkout/releases/tag/v7.0.1
+#   actions/setup-node    v7.0.0 — https://github.com/actions/setup-node/releases/tag/v7.0.0
+#
+# Node is pinned to an exact patch version (24.14.1), not a floating major:
+# the packaged-build code path (src/assets.mjs) needs node:sea's
+# getAssetKeys()/getRawAsset(), which only exist from Node 22.20.0 or
+# 24.8.0 onward (see scripts/build-sea.mjs's satisfiesMinimum check), and SEA
+# itself is Stability 1.1 ("active development") — pinning exactly, and
+# re-running the full check before ever bumping it, is deliberate.
+name: ci
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24.14.1'
+      - run: node scripts/check-workflow-yaml.mjs
+      - run: npm run check

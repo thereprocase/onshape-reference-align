@@ -1,0 +1,15 @@
+{
+  "name": "p1-resolve-top",
+  "method": "POST",
+  "path": "/partstudios/d/a11ce0000000000000000064/w/a11ce0000000000000000095/e/a11ce0000000000000000154/featurescript",
+  "requestBody": {
+    "script": "function(context is Context, queries) { return transientQueriesToStrings(evaluateQuery(context, qCreatedBy(makeId(\"Top\"), EntityType.FACE))); }",
+    "queries": []
+  },
+  "ok": false,
+  "status": 400,
+  "error": {
+    "message": "Onshape API request failed with 400 Bad Request.",
+    "body": "Cannot deserialize value of type `java.util.LinkedHashMap<java.lang.String,java.util.List<java.lang.String>>` from Array value (token `JsonToken.START_ARRAY`)\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 171] (through reference chain: com.belmonttech.serialize.bsedit.export.BTFeatureScriptEvalCall[\"queries\"])"
+  }
+}

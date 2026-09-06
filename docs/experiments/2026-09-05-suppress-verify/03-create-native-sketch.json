@@ -1,0 +1,100 @@
+{
+  "requestBody": {
+    "btType": "BTFeatureDefinitionCall-1406",
+    "feature": {
+      "btType": "BTMSketch-151",
+      "featureType": "newSketch",
+      "name": "Reference image sketch",
+      "suppressed": false,
+      "parameters": [],
+      "entities": [
+        {
+          "btType": "BTMSketchImageEntity-763",
+          "aspectRatio": 1,
+          "isConstruction": false,
+          "isFromSplineHandle": false,
+          "isFromSplineControlPolygon": false,
+          "isFromEndpointSplineHandle": false,
+          "originX": 0,
+          "originY": 0,
+          "namespace": "",
+          "name": "",
+          "index": 1,
+          "parameters": [
+            {
+              "btType": "BTMParameterBlobReference-1679",
+              "namespace": "ea11ce0000000000000000069::ma11ce0000000000000000045",
+              "blobImport": null,
+              "elementLibraryData": null,
+              "parameterId": "blobInfo",
+              "parameterName": ""
+            }
+          ],
+          "entityId": "referenceAlignVerifyImage"
+        }
+      ],
+      "constraints": []
+    },
+    "serializationVersion": "1.2.21",
+    "sourceMicroversion": "a11ce0000000000000000137",
+    "libraryVersion": 3070,
+    "rejectMicroversionSkew": false
+  },
+  "responseBody": {
+    "btType": "BTFeatureDefinitionResponse-1617",
+    "rejectMicroversionSkew": false,
+    "microversionSkew": false,
+    "featureState": {
+      "btType": "BTFeatureState-1688",
+      "featureStatus": "ERROR",
+      "inactive": false
+    },
+    "feature": {
+      "btType": "BTMSketch-151",
+      "suppressionState": null,
+      "returnAfterSubfeatures": false,
+      "subFeatures": [],
+      "parameterLibraries": [],
+      "entities": [
+        {
+          "btType": "BTMSketchImageEntity-763",
+          "aspectRatio": 1,
+          "isConstruction": false,
+          "isFromSplineControlPolygon": false,
+          "isFromEndpointSplineHandle": false,
+          "isFromSplineHandle": false,
+          "originX": 0,
+          "originY": 0,
+          "namespace": "",
+          "name": "",
+          "index": 1,
+          "parameters": [
+            {
+              "btType": "BTMParameterBlobReference-1679",
+              "namespace": "ea11ce0000000000000000069::ma11ce0000000000000000045",
+              "nodeId": "MnOFhG3lnjn6/I44n",
+              "blobImport": null,
+              "libraryRelationType": "DEFAULT",
+              "elementLibraryData": null,
+              "parameterId": "blobInfo",
+              "parameterName": ""
+            }
+          ],
+          "nodeId": "MhyHb7IMGz1x3Pt5g",
+          "entityId": "referenceAlignVerifyImage"
+        }
+      ],
+      "constraints": [],
+      "namespace": "",
+      "name": "Reference image sketch",
+      "parameters": [],
+      "nodeId": "MTtxgJxhBaqHzX3rq",
+      "featureId": "FRS8YirWVn4peOr_0",
+      "suppressed": false,
+      "featureType": "newSketch"
+    },
+    "sourceMicroversion": "a11ce0000000000000000014",
+    "libraryVersion": 0,
+    "serializationVersion": "1.2.21"
+  }
+}

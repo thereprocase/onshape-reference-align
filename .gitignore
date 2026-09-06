@@ -1,0 +1,6 @@
+.env
+backups/*.json
+.DS_Store
+node_modules/
+.claude/
+dist/

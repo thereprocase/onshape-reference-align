@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "default plane candidates",
+    "upload and install on Front through HTTP",
+    "user plane and sketch candidates",
+    "replane default:Right",
+    "replane plane:FOyh5rsOR477Svs_0",
+    "replane sketch:FREKeTRNSBru80h_0",
+    "separate scale/rotation preview and apply preserving plane"
+  ],
+  "context": {
+    "documentId": "a11ce0000000000000000118",
+    "workspaceOrVersion": "w",
+    "workspaceOrVersionId": "a11ce0000000000000000049",
+    "elementId": "a11ce0000000000000000117"
+  },
+  "documentUrl": "https://cad.onshape.com/documents/a11ce0000000000000000118/w/a11ce0000000000000000049/e/a11ce0000000000000000117"
+}

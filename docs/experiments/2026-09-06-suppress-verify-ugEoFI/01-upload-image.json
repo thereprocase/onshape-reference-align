@@ -1,0 +1,13 @@
+{
+  "name": "upload-image",
+  "route": "POST /api/upload-image?documentId=a11ce0000000000000000149&workspaceOrVersion=w&workspaceOrVersionId=a11ce0000000000000000063&elementId=a11ce0000000000000000083",
+  "requestBody": "[multipart]",
+  "status": null,
+  "error": {
+    "message": "Cannot read properties of undefined (reading 'rateLimits')",
+    "code": null,
+    "expose": null,
+    "body": null
+  },
+  "onshapeTraffic": []
+}

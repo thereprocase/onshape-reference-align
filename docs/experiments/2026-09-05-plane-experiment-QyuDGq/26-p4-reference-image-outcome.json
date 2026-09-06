@@ -1,0 +1,35 @@
+{
+  "featureId": "Fi0UiokYKdvQzmk_0",
+  "featureStatus": "OK",
+  "accepted": true,
+  "storedPlane": {
+    "btType": "BTMParameterQueryList-148",
+    "libraryRelationType": "DEFAULT",
+    "queries": [
+      {
+        "btType": "BTMIndividualQuery-138",
+        "queryStatement": null,
+        "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S5.7$FrontplaneOpS9$queryTypeS5$DUMMY\",id);",
+        "nodeId": "MqdhSrCViBxOaK7aK",
+        "deterministicIds": [
+          "JCC"
+        ]
+      }
+    ],
+    "filter": {
+      "btType": "BTAndFilter-110",
+      "operand1": {
+        "btType": "BTEntityTypeFilter-124",
+        "entityType": "FACE"
+      },
+      "operand2": {
+        "btType": "BTGeometryFilter-130",
+        "geometryType": "PLANE"
+      }
+    },
+    "nodeId": "MEu/KTqavEK6G1tMN",
+    "parameterId": "plane",
+    "parameterName": ""
+  },
+  "captureFile": "24-p4-reference-image.json"
+}

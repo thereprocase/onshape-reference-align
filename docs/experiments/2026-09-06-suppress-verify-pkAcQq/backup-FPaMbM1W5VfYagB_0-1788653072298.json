@@ -1,0 +1,145 @@
+{
+  "item": {
+    "id": "native:FPaMbM1W5VfYagB_0:referenceAlignVerifyImage",
+    "kind": "native",
+    "featureId": "FPaMbM1W5VfYagB_0",
+    "featureName": "Reference image sketch",
+    "entityId": "referenceAlignVerifyImage",
+    "label": "Reference image sketch · native Insert image",
+    "editable": false,
+    "suppressed": false,
+    "otherSketchEntityCount": 0,
+    "context": {
+      "documentId": "a11ce0000000000000000149",
+      "workspaceOrVersion": "w",
+      "workspaceOrVersionId": "a11ce0000000000000000063",
+      "elementId": "a11ce0000000000000000083",
+      "complete": true
+    },
+    "image": {
+      "aspectRatio": 1,
+      "blobElementId": "a11ce0000000000000000138",
+      "blobMicroversionId": "a11ce0000000000000000103",
+      "reference": {
+        "documentId": "a11ce0000000000000000149",
+        "elementId": "a11ce0000000000000000138",
+        "microversionId": "a11ce0000000000000000103",
+        "fallbackWorkspaceId": "a11ce0000000000000000063"
+      },
+      "proxyAvailable": true
+    },
+    "warnings": [
+      "Native sketch-image writes depend on Onshape internal feature serialization.",
+      "Native writes are disabled. Use the included calibrated FeatureScript for the supported path."
+    ]
+  },
+  "proposedUpdate": {
+    "btType": "BTFeatureDefinitionCall-1406",
+    "feature": {
+      "btType": "BTMSketch-151",
+      "suppressionState": null,
+      "returnAfterSubfeatures": false,
+      "subFeatures": [],
+      "parameterLibraries": [],
+      "entities": [
+        {
+          "btType": "BTMSketchImageEntity-763",
+          "aspectRatio": 1,
+          "isConstruction": false,
+          "isFromSplineHandle": false,
+          "isFromEndpointSplineHandle": false,
+          "isFromSplineControlPolygon": false,
+          "originX": 0,
+          "originY": 0,
+          "namespace": "",
+          "name": "",
+          "index": 1,
+          "parameters": [
+            {
+              "btType": "BTMParameterBlobReference-1679",
+              "namespace": "ea11ce0000000000000000138::ma11ce0000000000000000103",
+              "nodeId": "M1MAQqgHVsAjgnqBx",
+              "elementLibraryData": null,
+              "blobImport": null,
+              "libraryRelationType": "DEFAULT",
+              "parameterId": "blobInfo",
+              "parameterName": ""
+            }
+          ],
+          "nodeId": "MtiwsB5AIRsSw1zil",
+          "entityId": "referenceAlignVerifyImage"
+        }
+      ],
+      "constraints": [],
+      "namespace": "",
+      "name": "Reference image sketch",
+      "parameters": [
+        {
+          "btType": "BTMParameterQueryList-148",
+          "libraryRelationType": "DEFAULT",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S3.7$TopplaneOpS9$queryTypeS5$DUMMY\",id);",
+              "nodeId": "MLPieyn/NKKsttNSM",
+              "deterministicIds": [
+                "JDC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTOrFilter-167",
+            "operand1": {
+              "btType": "BTOrFilter-167",
+              "operand1": {
+                "btType": "BTAndFilter-110",
+                "operand1": {
+                  "btType": "BTGeometryFilter-130",
+                  "geometryType": "PLANE"
+                },
+                "operand2": {
+                  "btType": "BTFlatSheetMetalFilter-3018",
+                  "allows": "MODEL_ONLY"
+                }
+              },
+              "operand2": {
+                "btType": "BTAndFilter-110",
+                "operand1": {
+                  "btType": "BTAndFilter-110",
+                  "operand1": {
+                    "btType": "BTSMDefinitionEntityTypeFilter-1651",
+                    "smDefinitionEntityType": "FACE"
+                  },
+                  "operand2": {
+                    "btType": "BTFlatSheetMetalFilter-3018",
+                    "allows": "MODEL_AND_FLATTENED"
+                  }
+                },
+                "operand2": {
+                  "btType": "BTGeometryFilter-130",
+                  "geometryType": "PLANE"
+                }
+              }
+            },
+            "operand2": {
+              "btType": "BTBodyTypeFilter-112",
+              "bodyType": "MATE_CONNECTOR"
+            }
+          },
+          "nodeId": "MXGCNUi4Tp0mKqVIG",
+          "parameterId": "sketchPlane",
+          "parameterName": ""
+        }
+      ],
+      "nodeId": "MIdX5KB6ulMJAFlXL",
+      "featureId": "FPaMbM1W5VfYagB_0",
+      "suppressed": true,
+      "featureType": "newSketch"
+    },
+    "serializationVersion": "1.2.21",
+    "sourceMicroversion": "a11ce0000000000000000122",
+    "libraryVersion": 3070,
+    "rejectMicroversionSkew": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "onshape-reference-align/recipe/v1",
+  "createdAt": "2026-09-04T20:00:00.000Z",
+  "source": {
+    "name": "reference-photo.jpg",
+    "pixelWidth": 4032,
+    "pixelHeight": 3024
+  },
+  "input": {
+    "imageSize": { "width": 4032, "height": 3024 },
+    "currentPlacement": { "originX": 0, "originY": 0, "width": 1, "angle": 0 },
+    "scalePair": {
+      "a": { "x": 420.25, "y": 2510.75 },
+      "b": { "x": 1864.5, "y": 2488.25 }
+    },
+    "trueDistance": 6,
+    "distanceUnit": "in",
+    "rotationTarget": { "mode": "horizontal", "customAngle": 0, "customAngleUnit": "deg" },
+    "anchor": "scale-a"
+  },
+  "featureParameters": {
+    "originX": "0.123 m",
+    "originY": "-0.456 m",
+    "imageWidth": "0.425 m",
+    "imageAngle": "0.892 deg"
+  }
+}

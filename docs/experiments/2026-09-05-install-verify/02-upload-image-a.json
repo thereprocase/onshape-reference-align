@@ -1,0 +1,59 @@
+{
+  "name": "upload-image-a",
+  "route": "POST /api/upload-image?documentId=a11ce0000000000000000034&workspaceOrVersion=w&workspaceOrVersionId=a11ce0000000000000000043&elementId=a11ce0000000000000000020",
+  "requestBody": "[multipart]",
+  "status": 200,
+  "responseBody": {
+    "ok": true,
+    "elementId": "a11ce0000000000000000071",
+    "microversionId": "a11ce0000000000000000002",
+    "name": "reference-align-icon-a.png",
+    "dataType": "image/png",
+    "mediaType": "image/png",
+    "byteLength": 19698,
+    "declaredTypeMismatch": false,
+    "namespace": "ea11ce0000000000000000071::ma11ce0000000000000000002"
+  },
+  "onshapeTraffic": [
+    {
+      "method": "POST",
+      "url": "https://cad.onshape.com/api/v17/blobelements/d/a11ce0000000000000000034/w/a11ce0000000000000000043",
+      "status": 200,
+      "requestBody": "[binary or absent]",
+      "responseBody": {
+        "translationId": null,
+        "translationEventKey": "",
+        "name": "reference-align-icon-a.png",
+        "id": "a11ce0000000000000000071",
+        "type": "Blob",
+        "elementType": "BLOB",
+        "angleUnits": null,
+        "massUnits": null,
+        "timeUnits": null,
+        "forceUnits": null,
+        "pressureUnits": null,
+        "momentUnits": null,
+        "accelerationUnits": null,
+        "angularVelocityUnits": null,
+        "energyUnits": null,
+        "areaUnits": null,
+        "volumeUnits": null,
+        "densityUnits": null,
+        "frequencyUnits": null,
+        "lengthUnits": null,
+        "dataType": "image/png",
+        "filename": "reference-align-icon-a.png",
+        "thumbnailInfo": null,
+        "thumbnails": null,
+        "microversionId": "a11ce0000000000000000002",
+        "applicationTarget": null,
+        "foreignDataId": "a11ce0000000000000000077",
+        "unupdatable": false,
+        "safeToShow": false,
+        "specifiedUnit": "",
+        "prettyType": null,
+        "zip": null
+      }
+    }
+  ]
+}

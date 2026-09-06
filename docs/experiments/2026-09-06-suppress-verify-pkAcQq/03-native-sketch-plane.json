@@ -1,0 +1,32 @@
+{
+  "plane": {
+    "id": "default:Top",
+    "label": "Top",
+    "kind": "default",
+    "query": {
+      "btType": "BTMParameterQueryList-148",
+      "queries": [
+        {
+          "btType": "BTMIndividualQuery-138",
+          "queryStatement": null,
+          "queryString": "query=qCreatedBy(makeId(\"Top\"), EntityType.FACE);",
+          "deterministicIds": [
+            "JDC"
+          ]
+        }
+      ],
+      "filter": {
+        "btType": "BTAndFilter-110",
+        "operand1": {
+          "btType": "BTEntityTypeFilter-124",
+          "entityType": "FACE"
+        },
+        "operand2": {
+          "btType": "BTGeometryFilter-130",
+          "geometryType": "PLANE"
+        }
+      },
+      "parameterId": "plane"
+    }
+  }
+}

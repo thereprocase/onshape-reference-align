@@ -1,0 +1,89 @@
+{
+  "name": "p2-right-c",
+  "method": "POST",
+  "path": "/partstudios/d/a11ce0000000000000000064/w/a11ce0000000000000000095/e/a11ce0000000000000000154/features",
+  "requestBody": {
+    "btType": "BTFeatureDefinitionCall-1406",
+    "feature": {
+      "btType": "BTMFeature-134",
+      "featureType": "referenceImage",
+      "name": "P2 Right c",
+      "namespace": "ea11ce0000000000000000022::ma11ce0000000000000000157",
+      "parameters": [
+        {
+          "btType": "BTMParameterReferenceImage-2014",
+          "namespace": "ea11ce0000000000000000155::ma11ce0000000000000000101",
+          "parameterId": "image",
+          "elementLibraryData": null
+        },
+        {
+          "btType": "BTMParameterQueryList-148",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": null,
+              "deterministicIds": [
+                "JEC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "parameterId": "plane"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0.25 m",
+          "parameterId": "imageWidth"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 deg",
+          "parameterId": "imageAngle"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "parameterId": "originX"
+        },
+        {
+          "btType": "BTMParameterQuantity-147",
+          "isInteger": false,
+          "value": 0,
+          "units": "",
+          "expression": "0 m",
+          "parameterId": "originY"
+        }
+      ]
+    },
+    "serializationVersion": "1.2.21",
+    "sourceMicroversion": "a11ce0000000000000000058",
+    "libraryVersion": 3070,
+    "rejectMicroversionSkew": false
+  },
+  "ok": false,
+  "status": 400,
+  "error": {
+    "message": "Onshape API request failed with 400 Bad Request.",
+    "body": "Cannot have a null list, map, array, string or enum\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 491] (through reference chain: com.belmonttech.serialize.bsedit.export.BTFeatureDefinitionCall[\"feature\"]->com.belmonttech.serialize.bsedit.BTMFeature[\"parameters\"]->java.util.ArrayList[1]->com.belmonttech.serialize.bsedit.BTMParameterQueryList[\"queries\"]->java.util.ArrayList[0]->com.belmonttech.serialize.bsedit.BTMIndividualQuery[\"queryString\"])"
+  }
+}

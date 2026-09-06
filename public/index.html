@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Reference Align for Onshape</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <span></span><span></span>
+      </div>
+      <div>
+        <h1>Reference Align</h1>
+        <p>Scale and rotate an image from pixels you can actually click.</p>
+      </div>
+    </div>
+    <div class="header-badges" aria-live="polite">
+      <span id="modeBadge" class="badge">Standalone</span>
+      <button id="authBadge" type="button" class="badge badge-muted">Onshape not connected</button>
+      <span id="planBadge" class="badge badge-muted" hidden></span>
+    </div>
+  </header>
+
+  <div id="updateBanner" class="callout callout-neutral update-banner" role="status" hidden>
+    <span id="updateBannerText"></span>
+    <a id="updateBannerLink" href="#" target="_blank" rel="noopener noreferrer">See the release</a>
+    <button id="updateBannerDismiss" type="button" class="icon-button" aria-label="Dismiss update notice">Dismiss</button>
+  </div>
+
+  <main class="workspace">
+    <nav id="layoutRail" class="layout-rail" aria-label="Workspace panels">
+      <button id="connectionRailBtn" type="button" aria-label="Connection" title="Connection" aria-controls="connectionPanel" aria-expanded="false"><span id="connectionDot" class="status-dot" aria-hidden="true"></span><span class="rail-label">Connection</span></button>
+      <button id="documentRailBtn" type="button" aria-label="Document" title="Document" aria-controls="documentPanel" aria-expanded="false"><span id="documentDot" class="status-dot" aria-hidden="true"></span><span class="rail-label">Document</span><span id="installIndicator" class="install-indicator" hidden aria-label="Feature installation available">+</span></button>
+      <button id="settingsRailBtn" type="button" aria-label="Settings" title="Settings" aria-controls="settingsPanel" aria-expanded="false"><span aria-hidden="true">⚙</span><span class="rail-label">Settings</span></button>
+    </nav>
+    <aside id="layoutFlyout" class="layout-flyout" aria-label="Workspace setup" hidden>
+      <button id="closeFlyoutBtn" class="text-button flyout-close" type="button">Close panel</button>
+      <section id="connectionPanel" aria-label="Connection" hidden></section>
+      <section id="documentPanel" aria-label="Document" hidden></section>
+      <section id="settingsPanel" aria-label="Settings" hidden></section>
+    </aside>
+    <section class="viewer-column" aria-label="Image point picker">
+      <div class="stage-tabs" role="tablist" aria-label="Image view">
+        <button id="sourceTab" type="button" role="tab" aria-selected="true" aria-controls="sourcePanel">Source</button>
+        <button id="previewTab" type="button" role="tab" aria-selected="false" aria-controls="previewPanel" aria-describedby="previewTabReason" disabled tabindex="-1">Preview</button>
+        <span id="previewTabReason" class="microcopy">Preview a calibration to see the aligned image.</span>
+      </div>
+      <div id="sourcePanel" class="panel viewer-panel" role="tabpanel" aria-labelledby="sourceTab">
+        <div class="panel-heading viewer-heading">
+          <div>
+            <h2>Source image</h2>
+            <p id="imageSummary">Load an image, then pick the reference pixels.</p>
+          </div>
+          <div class="toolbar" role="toolbar" aria-label="Image navigation">
+            <button id="fitBtn" class="icon-button" type="button" title="Fit image" aria-label="Fit image">Fit</button>
+            <button id="zoomOutBtn" class="icon-button" type="button" title="Zoom out" aria-label="Zoom out">−</button>
+            <button id="zoomInBtn" class="icon-button" type="button" title="Zoom in" aria-label="Zoom in">+</button>
+            <button id="panBtn" class="icon-button" type="button" title="Toggle pan mode" aria-pressed="false">Pan</button>
+          </div>
+        </div>
+
+        <div id="canvasStage" class="canvas-stage" tabindex="0" aria-label="Reference image. Use the point buttons, then click image pixels.">
+          <canvas id="sourceCanvas"></canvas>
+          <canvas id="loupeCanvas" class="loupe" width="180" height="180" aria-hidden="true"></canvas>
+          <div id="emptyState" class="empty-state">
+            <div class="empty-glyph" aria-hidden="true">＋</div>
+            <strong>Load an image</strong>
+            <span>PNG, JPEG, or WebP stays in your browser.</span>
+            <button id="emptyLoadBtn" class="primary-button" type="button">Choose image</button>
+          </div>
+          <div id="pickHud" class="pick-hud" hidden></div>
+        </div>
+
+        <div class="viewer-footer">
+          <div class="file-actions">
+            <input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+            <button id="loadFileBtn" class="secondary-button" type="button">Load local image</button>
+            <button id="loadOnshapeBtn" class="secondary-button" type="button" disabled aria-describedby="loadOnshapeReason">Load selected Onshape image</button>
+          </div>
+          <p id="loadOnshapeReason" class="control-reason" hidden></p>
+          <div class="coordinate-readout">
+            <span id="cursorReadout">x —, y —</span>
+            <span class="hint">Wheel: zoom · drag: pan · Esc: cancel pick</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="previewPanel" class="panel preview-panel" role="tabpanel" aria-labelledby="previewTab" hidden>
+        <div class="panel-heading">
+          <div>
+            <h2>Aligned preview</h2>
+            <p>Rotation is shown visually. Physical scale is carried by the calculated width.</p>
+          </div>
+        </div>
+        <div class="preview-stage">
+          <canvas id="previewCanvas"></canvas>
+          <div id="previewEmpty" class="preview-empty">Pick two scale pixels and press Preview.</div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="controls-column" aria-label="Calibration controls">
+      <section id="setupCard" class="panel control-card">
+        <div class="card-title-row">
+          <div>
+            <span class="step-kicker">Onshape connection</span>
+            <h2>Set up Onshape</h2>
+          </div>
+        </div>
+        <div id="setupUnavailable" class="callout callout-warning" hidden></div>
+        <div id="setupIntro">
+          <p class="card-help">Reference Align is a companion app running on this computer. This browser page is its control panel; keep the app running while you use it. Your Onshape document stays in its usual browser tab.</p>
+          <p class="card-help">Connect once to place calibrated images in Onshape. You do not need to write code or set up a website. Onshape calls the connection details an <strong>API key</strong>: an access key and a secret key that you create together.</p>
+          <button id="setupSkipBtn" type="button" class="text-button">Try an image without connecting</button>
+          <p id="setupSkipHint" class="microcopy">You can measure an image and preview its alignment now. Connect later from the Connection button to save it to Onshape.</p>
+          <h3 class="setup-heading">1 · Create your connection key</h3>
+          <ol id="setupSteps" class="setup-steps">
+            <li>Open Onshape’s key page in a new tab. Sign in with the same Onshape account that can edit your document. The page is called the developer portal; you can use it without being a developer.
+              <a id="setupPortalLink" class="secondary-button full-width" href="https://dev-portal.onshape.com/keys" target="_blank" rel="noopener noreferrer">Open Onshape’s API key page ↗</a>
+            </li>
+            <li>Click <strong>API keys</strong>, then <strong>Create new API key</strong>.</li>
+            <li>Tick <strong>Read documents</strong> and <strong>Write documents</strong>, then create the key. These let the app read your image and save its placement. Leave the other permissions unticked.</li>
+            <li>Keep the key dialog open. Copy the <strong>access key</strong> into Access key below, then copy the matching <strong>secret key</strong> into Secret key. Onshape shows the secret key once. If you close the dialog and lose it, create a new key. These are not your Onshape email address or password.</li>
+          </ol>
+        </div>
+        <form id="setupForm">
+          <h3 class="setup-heading">2 · Paste both values here</h3>
+          <label class="field" for="setupAccessKey">
+            <span>Access key</span>
+            <input id="setupAccessKey" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="Paste the access key from Onshape" aria-describedby="setupKeyHint">
+          </label>
+          <label class="field" for="setupSecretKey">
+            <span>Secret key</span>
+            <div class="input-suffix">
+              <input id="setupSecretKey" type="password" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="Paste the secret key from the same key pair" aria-describedby="setupKeyHint">
+              <button id="setupSecretRevealBtn" type="button" class="text-button" aria-pressed="false">Show</button>
+            </div>
+          </label>
+          <p id="setupKeyHint" class="microcopy" hidden></p>
+          <details id="setupAdvanced">
+            <summary>Using an enterprise or private Onshape address?</summary>
+            <div class="details-body">
+              <label class="field" for="setupBaseUrl">
+                <span>Onshape address</span>
+                <input id="setupBaseUrl" type="text" inputmode="url" autocomplete="off" spellcheck="false"
+                       placeholder="https://acme.onshape.com" aria-describedby="setupBaseUrlHint">
+              </label>
+              <p id="setupBaseUrlHint" class="microcopy">Leave this blank unless your organization uses its own Onshape address instead of cad.onshape.com.</p>
+            </div>
+          </details>
+          <h3 class="setup-heading">3 · Test, then save</h3>
+          <p class="microcopy">Test connection checks the key without changing your document. When it works, Save and continue remembers it on this computer for your next visit. Then you will paste your Part Studio link.</p>
+          <div class="button-row">
+            <button id="setupTestBtn" type="submit" class="secondary-button field-grow">Test connection</button>
+            <button id="setupSaveBtn" type="button" class="primary-button field-grow" disabled>Save and continue</button>
+          </div>
+          <button id="setupCancelBtn" type="button" class="text-button" hidden>Cancel</button>
+          <p id="setupSaveReason" class="microcopy control-reason">Press Test connection first. Nothing is written until Onshape confirms the key works.</p>
+          <p id="setupStatus" class="callout callout-neutral" role="status" hidden></p>
+          <p id="setupError" class="callout callout-warning" role="alert" hidden></p>
+        </form>
+        <div id="setupConnected" hidden>
+          <p class="callout callout-good">Connected as <strong id="setupConnectedName">—</strong>.</p>
+          <button id="setupReconfigureBtn" type="button" class="text-button">Change API key</button>
+        </div>
+        <p id="setupConfigPath" class="microcopy"></p>
+      </section>
+
+      <section id="onshapeCard" class="panel control-card">
+        <div class="card-title-row">
+          <div>
+            <span class="step-kicker">Onshape target</span>
+            <h2>Reference image feature</h2>
+          </div>
+          <button id="refreshFeaturesBtn" class="text-button" type="button" aria-describedby="refreshFeaturesReason">Refresh</button>
+        </div>
+        <p id="refreshFeaturesReason" class="control-reason" hidden></p>
+        <details id="urlBoxDetails" class="url-box" open>
+          <summary id="urlBoxSummary">Paste your Onshape Part Studio URL</summary>
+          <div class="url-box-body">
+            <label class="field" for="onshapeUrlInput">
+              <span>Onshape URL</span>
+              <input id="onshapeUrlInput" type="text" inputmode="url" autocomplete="off"
+                     spellcheck="false" autocapitalize="off"
+                     aria-describedby="urlHint"
+                     placeholder="https://cad.onshape.com/documents/…/w/…/e/…">
+            </label>
+            <p id="urlHint" class="microcopy">In your Onshape document, click the Part Studio tab where the image should go. Copy the full address from your browser’s address bar and paste it here. Open the editable workspace if you want to save changes; version and microversion links can only be viewed.</p>
+            <div id="urlParsed" class="url-parsed" hidden>
+              <div><span>Document</span><code id="urlParsedDocument">—</code></div>
+              <div><span>Workspace</span><code id="urlParsedWorkspace">—</code></div>
+              <div><span>Tab</span><code id="urlParsedElement">—</code></div>
+              <p id="urlParsedWorkspaceKind" class="microcopy">—</p>
+              <a id="urlOpenInOnshape" class="text-button" href="#" target="_blank" rel="noopener">Open this tab in Onshape</a>
+            </div>
+            <p id="urlWarning" class="callout callout-neutral" hidden></p>
+            <p id="urlError" class="callout callout-warning" role="alert" hidden></p>
+            <button id="loadUrlBtn" class="primary-button full-width" type="button">Load this document</button>
+          </div>
+        </details>
+        <div id="contextMessage" class="callout callout-neutral">
+          Open this page as an Onshape Part Studio right-panel extension, or use standalone mode.
+        </div>
+        <label class="field">
+          <span>Target</span>
+          <select id="featureSelect">
+            <option value="">Standalone / no Onshape write</option>
+          </select>
+        </label>
+        <div id="featureDetails" class="feature-details" hidden></div>
+        <div id="planeChangeRow" class="install-section" hidden>
+          <p id="selectedPlaneLabel">Plane: checking…</p>
+          <label class="field" for="replaneSelect"><span>Move to plane</span><select id="replaneSelect" aria-describedby="replaneReason"></select></label>
+          <button id="replaneBtn" class="secondary-button" type="button" aria-describedby="replaneReason">Change plane</button>
+          <p id="replaneReason" class="control-reason" hidden></p>
+          <p id="replaneStatus" class="microcopy" role="status" hidden></p>
+        </div>
+        <div id="unsuppressRow" class="button-row" hidden>
+          <button id="unsuppressBtn" class="secondary-button field-grow" type="button" aria-describedby="unsuppressReason">Unsuppress this sketch</button>
+        </div>
+        <p id="unsuppressReason" class="control-reason" hidden></p>
+        <p id="suppressStatus" class="callout callout-neutral" role="status" hidden></p>
+        <p id="suppressError" class="callout callout-warning" role="alert" hidden></p>
+        <section id="installSection" class="install-section" aria-labelledby="installHeading" hidden>
+          <h3 id="installHeading">Install into this document</h3>
+          <p id="installState" class="microcopy">Checking this document…</p>
+          <label class="field" for="installImageSelect">
+            <span>Image to use</span>
+            <select id="installImageSelect" aria-describedby="installImageHint">
+              <option value="">Choose an image…</option>
+            </select>
+          </label>
+          <p id="installImageHint" class="microcopy">Pick an image tab already in this document, or upload the image loaded on the left.</p>
+          <label class="field" for="installPlaneSelect"><span>Plane</span><select id="installPlaneSelect" aria-describedby="installPlaneReason"><option value="">Top</option></select></label>
+          <p id="installPlaneReason" class="control-reason" hidden></p>
+          <div class="button-row">
+            <button id="installBtn" class="primary-button field-grow" type="button" aria-describedby="installReason">Install into this document</button>
+          </div>
+          <p id="installReason" class="control-reason" hidden></p>
+          <div class="button-row">
+            <button id="uploadUseImageBtn" class="secondary-button field-grow" type="button" aria-describedby="uploadUseImageReason">Upload the local image and use it</button>
+          </div>
+          <p id="uploadUseImageReason" class="control-reason" hidden></p>
+          <p id="installStatus" class="callout callout-neutral" role="status" hidden></p>
+          <p id="installError" class="callout callout-warning" role="alert" hidden></p>
+        </section>
+        <a id="authorizeLink" class="primary-button full-width" href="/auth/start" target="_blank" rel="noopener" hidden>Authorize Onshape</a>
+      </section>
+
+      <section id="scaleCard" class="panel control-card">
+        <div class="card-title-row">
+          <div>
+            <span class="step-kicker">1 · Scale</span>
+            <h2>Known-distance pair</h2>
+          </div>
+          <button id="clearPicksBtn" class="text-button" type="button">Clear</button>
+        </div>
+        <p class="card-help">Click two arbitrary pixels whose real separation you know.</p>
+        <div class="pick-grid">
+          <button id="pickScaleA" class="pick-button" type="button" data-pick="scale-a" aria-describedby="scalePickReason">
+            <span class="point-chip point-scale">S1</span>
+            <span>
+              <strong>Pick first pixel</strong>
+              <small id="scaleACoord">Not set</small>
+            </span>
+          </button>
+          <button id="pickScaleB" class="pick-button" type="button" data-pick="scale-b" aria-describedby="scalePickReason">
+            <span class="point-chip point-scale">S2</span>
+            <span>
+              <strong>Pick second pixel</strong>
+              <small id="scaleBCoord">Not set</small>
+            </span>
+          </button>
+        </div>
+        <p id="scalePickReason" class="control-reason" hidden></p>
+        <div class="field-row distance-row">
+          <label class="field field-grow">
+            <span>True distance S1 → S2</span>
+            <input id="distanceInput" type="number" min="0" step="any" value="6" inputmode="decimal">
+          </label>
+          <label class="field unit-field">
+            <span>Unit</span>
+            <select id="distanceUnit">
+              <option value="in" selected>in</option>
+              <option value="ft">ft</option>
+              <option value="mm">mm</option>
+              <option value="cm">cm</option>
+              <option value="m">m</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <details id="rotationCard" class="panel control-card">
+        <summary class="card-title-row">
+          <div>
+            <span class="step-kicker">2 · Rotation</span>
+            <h2>Orientation pair</h2>
+          </div>
+        </summary>
+        <label class="switch-row">
+          <input id="samePairToggle" type="checkbox" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span>
+            <strong>Use S1 → S2 for rotation</strong>
+            <small>Turn off to pick a separate R1 → R2 line.</small>
+          </span>
+        </label>
+        <div id="rotationPickGroup" class="pick-grid" hidden>
+          <button id="pickRotationA" class="pick-button" type="button" data-pick="rotation-a" aria-describedby="rotationPickReason">
+            <span class="point-chip point-rotation">R1</span>
+            <span>
+              <strong>Pick first pixel</strong>
+              <small id="rotationACoord">Not set</small>
+            </span>
+          </button>
+          <button id="pickRotationB" class="pick-button" type="button" data-pick="rotation-b" aria-describedby="rotationPickReason">
+            <span class="point-chip point-rotation">R2</span>
+            <span>
+              <strong>Pick second pixel</strong>
+              <small id="rotationBCoord">Not set</small>
+            </span>
+          </button>
+          <p id="rotationPickReason" class="control-reason" hidden></p>
+        </div>
+        <label class="field">
+          <span>Make the orientation pair</span>
+          <select id="rotationMode">
+            <option value="horizontal" selected>Horizontal · 0°</option>
+            <option value="vertical">Vertical · 90°</option>
+            <option value="nearest-axis">Nearest 90° axis</option>
+            <option value="custom">Arbitrary angle…</option>
+            <option value="keep">Keep current orientation</option>
+          </select>
+        </label>
+        <label id="customAngleField" class="field" hidden>
+          <span>Target angle from sketch +X</span>
+          <div class="input-suffix">
+            <input id="customAngleInput" type="number" step="any" value="0" inputmode="decimal">
+            <span>deg</span>
+          </div>
+        </label>
+      </details>
+
+      <section id="applyCard" class="panel control-card">
+        <div class="card-title-row">
+          <div>
+            <span class="step-kicker">3 · Apply</span>
+            <h2>Anchor and commit</h2>
+          </div>
+        </div>
+        <label class="field">
+          <span>Pixel that stays fixed in sketch space</span>
+          <select id="anchorSelect">
+            <option value="scale-a" selected>S1 · first scale pixel</option>
+            <option value="scale-b">S2 · second scale pixel</option>
+            <option value="rotation-a">R1 · first rotation pixel</option>
+            <option value="rotation-b">R2 · second rotation pixel</option>
+            <option value="center">Image center</option>
+          </select>
+        </label>
+        <div class="button-row">
+          <button id="previewBtn" class="primary-button field-grow" type="button" aria-describedby="previewReason">Preview calibration</button>
+          <button id="applyBtn" class="danger-button field-grow" type="button" disabled aria-describedby="applyHelp">Apply to Onshape</button>
+        </div>
+        <p id="previewReason" class="control-reason" hidden></p>
+        <p id="applyHelp" class="microcopy control-reason">Preview first. Apply activates only for a writable calibrated image feature.</p>
+      </section>
+
+      <details id="resultsCard" class="panel control-card results-card" hidden>
+        <summary class="card-title-row">
+          <div>
+            <span class="step-kicker">Result</span>
+            <h2>Calculated placement</h2>
+          </div>
+          <span id="resultStatus" class="badge badge-good">Ready</span>
+        </summary>
+        <dl class="result-grid">
+          <div><dt>Image width</dt><dd id="resultWidth">—</dd></div>
+          <div><dt>Image angle</dt><dd id="resultAngle">—</dd></div>
+          <div><dt>Scale factor</dt><dd id="resultScale">—</dd></div>
+          <div><dt>Anchor drift</dt><dd id="resultResidual">—</dd></div>
+        </dl>
+        <div class="parameter-box">
+          <div><span>originX</span><code id="resultOriginX">—</code></div>
+          <div><span>originY</span><code id="resultOriginY">—</code></div>
+          <div><span>imageWidth</span><code id="resultWidthExpr">—</code></div>
+          <div><span>imageAngle</span><code id="resultAngleExpr">—</code></div>
+        </div>
+        <div class="button-row wrap">
+          <button id="copyParamsBtn" class="secondary-button" type="button">Copy parameters</button>
+          <button id="downloadRecipeBtn" class="secondary-button" type="button">Download recipe JSON</button>
+          <button id="downloadPngBtn" class="secondary-button" type="button">Export rotated PNG</button>
+        </div>
+        <p class="microcopy">PNG export bakes rotation only. Physical scale remains in the recipe and Onshape width parameter.</p>
+        <div id="duplicateOffer" class="duplicate-offer" hidden>
+          <p id="duplicateOfferText"></p>
+          <p id="duplicateOfferExplain" class="microcopy"></p>
+          <div class="button-row">
+            <button id="duplicateSuppressBtn" class="secondary-button field-grow" type="button" aria-describedby="duplicateSuppressReason">Suppress the sketch</button>
+          </div>
+          <p id="duplicateSuppressReason" class="control-reason" hidden></p>
+        </div>
+      </details>
+
+      <section id="settingsCard" class="panel compact-card">
+        <details id="settingsDetails">
+          <summary id="settingsSummary">What this app is allowed to do</summary>
+          <div class="details-body">
+            <p id="settingsUnavailable" class="callout callout-warning" hidden></p>
+            <p class="microcopy">Two things have to agree before anything is written to Onshape: your API key has to allow it, and it has to be switched on here.</p>
+
+            <label class="switch-row">
+              <input id="settingsAllowFeatureInstall" type="checkbox" checked>
+              <span class="switch" aria-hidden="true"></span>
+              <span>
+                <strong>Install the Reference Image feature</strong>
+                <small id="capFeatureInstall">Checking what this key can do…</small>
+              </span>
+            </label>
+
+            <label class="switch-row">
+              <input id="settingsAllowImageUpload" type="checkbox" checked>
+              <span class="switch" aria-hidden="true"></span>
+              <span>
+                <strong>Upload images</strong>
+                <small id="capImageUpload">Checking what this key can do…</small>
+              </span>
+            </label>
+
+            <label class="switch-row">
+              <input id="settingsAllowDocumentCreation" type="checkbox" checked>
+              <span class="switch" aria-hidden="true"></span>
+              <span>
+                <strong>Create scratch documents</strong>
+                <small id="capDocumentCreation">Checking what this key can do…</small>
+              </span>
+            </label>
+            <p class="microcopy">Nothing on this page creates a document yet. This switch, and the folder id below, only matter to the command-line verification scripts in <code>scripts/</code>.</p>
+
+            <label class="switch-row">
+              <input id="settingsAllowSuppression" type="checkbox" checked>
+              <span class="switch" aria-hidden="true"></span>
+              <span>
+                <strong>Suppress features</strong>
+                <small id="capSuppression">Checking what this key can do…</small>
+              </span>
+            </label>
+
+            <label class="switch-row">
+              <input id="settingsConfirmBeforeWrite" type="checkbox" checked>
+              <span class="switch" aria-hidden="true"></span>
+              <span>
+                <strong>Confirm before every write</strong>
+                <small>Ask first, every time, before anything is sent to Onshape.</small>
+              </span>
+            </label>
+
+            <label class="field" for="settingsScratchFolderId">
+              <span>Scratch folder id (optional)</span>
+              <input id="settingsScratchFolderId" type="text" autocomplete="off" spellcheck="false"
+                     placeholder="24-character Onshape folder id" aria-describedby="settingsScratchFolderHint">
+            </label>
+            <p id="settingsScratchFolderHint" class="microcopy">Used only by the command-line verification scripts when they create a scratch document; nothing on this page reads it yet. Leave it blank to create scratch documents at the top level.</p>
+
+            <p class="microcopy"><strong>Deleting</strong></p>
+            <p id="capDeleteCleanup" class="microcopy">Checking what this key can do…</p>
+
+            <div class="button-row">
+              <button id="settingsSaveBtn" type="button" class="secondary-button field-grow">Save settings</button>
+            </div>
+            <p id="settingsReason" class="control-reason" hidden></p>
+            <p id="settingsStatus" class="callout callout-neutral" role="status" hidden></p>
+            <p id="settingsError" class="callout callout-warning" role="alert" hidden></p>
+            <p id="settingsPath" class="microcopy"></p>
+          </div>
+        </details>
+      </section>
+
+      <section id="featureDownloadCard" class="panel compact-card">
+        <details>
+          <summary>Install the supported Onshape feature</summary>
+          <div class="details-body">
+            <p>Native <em>Insert image</em> writes are deliberately off by default. Add the included FeatureScript and insert the image with <strong>Calibrated Reference Image</strong>.</p>
+            <a class="secondary-button full-width" href="/assets/ReferenceImage.fs" download>Download ReferenceImage.fs</a>
+          </div>
+        </details>
+      </section>
+
+      <div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    </aside>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

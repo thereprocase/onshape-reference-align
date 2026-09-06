@@ -1,0 +1,81 @@
+{
+  "item": {
+    "id": "native:FRS8YirWVn4peOr_0:referenceAlignVerifyImage",
+    "kind": "native",
+    "featureId": "FRS8YirWVn4peOr_0",
+    "featureName": "Reference image sketch",
+    "entityId": "referenceAlignVerifyImage",
+    "label": "Reference image sketch · native Insert image",
+    "editable": false,
+    "suppressed": true,
+    "otherSketchEntityCount": 0,
+    "context": {
+      "documentId": "a11ce0000000000000000007",
+      "workspaceOrVersion": "w",
+      "workspaceOrVersionId": "a11ce0000000000000000044",
+      "elementId": "a11ce0000000000000000135",
+      "complete": true
+    },
+    "image": {
+      "aspectRatio": 1,
+      "blobElementId": "a11ce0000000000000000069",
+      "blobMicroversionId": "a11ce0000000000000000045",
+      "proxyAvailable": false
+    },
+    "warnings": [
+      "Native sketch-image writes depend on Onshape internal feature serialization.",
+      "Native writes are disabled. Use the included calibrated FeatureScript for the supported path."
+    ]
+  },
+  "proposedUpdate": {
+    "btType": "BTFeatureDefinitionCall-1406",
+    "feature": {
+      "btType": "BTMSketch-151",
+      "suppressionState": null,
+      "returnAfterSubfeatures": false,
+      "subFeatures": [],
+      "parameterLibraries": [],
+      "entities": [
+        {
+          "btType": "BTMSketchImageEntity-763",
+          "aspectRatio": 1,
+          "isConstruction": false,
+          "isFromSplineControlPolygon": false,
+          "isFromEndpointSplineHandle": false,
+          "isFromSplineHandle": false,
+          "originX": 0,
+          "originY": 0,
+          "namespace": "",
+          "name": "",
+          "index": 1,
+          "parameters": [
+            {
+              "btType": "BTMParameterBlobReference-1679",
+              "namespace": "ea11ce0000000000000000069::ma11ce0000000000000000045",
+              "nodeId": "M3SJhzlhZH6j19wQJ",
+              "blobImport": null,
+              "libraryRelationType": "DEFAULT",
+              "elementLibraryData": null,
+              "parameterId": "blobInfo",
+              "parameterName": ""
+            }
+          ],
+          "nodeId": "MCzLROK+zxUXA/dUi",
+          "entityId": "referenceAlignVerifyImage"
+        }
+      ],
+      "constraints": [],
+      "namespace": "",
+      "name": "Reference image sketch",
+      "parameters": [],
+      "nodeId": "MTtxgJxhBaqHzX3rq",
+      "featureId": "FRS8YirWVn4peOr_0",
+      "suppressed": false,
+      "featureType": "newSketch"
+    },
+    "serializationVersion": "1.2.21",
+    "sourceMicroversion": "a11ce0000000000000000141",
+    "libraryVersion": 3070,
+    "rejectMicroversionSkew": false
+  }
+}

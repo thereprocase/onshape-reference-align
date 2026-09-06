@@ -1,0 +1,238 @@
+{
+  "name": "install-status-before",
+  "route": "GET /api/install/status?documentId=a11ce0000000000000000034&workspaceOrVersion=w&workspaceOrVersionId=a11ce0000000000000000043&elementId=a11ce0000000000000000020",
+  "requestBody": null,
+  "status": 200,
+  "responseBody": {
+    "context": {
+      "documentId": "a11ce0000000000000000034",
+      "workspaceOrVersion": "w",
+      "workspaceOrVersionId": "a11ce0000000000000000043",
+      "elementId": "a11ce0000000000000000020",
+      "complete": true
+    },
+    "available": true,
+    "install": {
+      "state": "not-installed",
+      "featureStudio": null,
+      "markedStudioIds": [],
+      "unreadStudioIds": [],
+      "instances": [],
+      "imageElements": []
+    },
+    "marker": "reference-align-feature: 1",
+    "maxImageUploadBytes": 26214400
+  },
+  "onshapeTraffic": [
+    {
+      "method": "GET",
+      "url": "https://cad.onshape.com/api/v17/documents/d/a11ce0000000000000000034/w/a11ce0000000000000000043/elements",
+      "status": 200,
+      "requestBody": "[binary or absent]",
+      "responseBody": [
+        {
+          "name": "Part Studio 1",
+          "id": "a11ce0000000000000000020",
+          "type": "Part Studio",
+          "elementType": "PARTSTUDIO",
+          "angleUnits": "degree",
+          "massUnits": "gram",
+          "timeUnits": "second",
+          "forceUnits": "newton",
+          "pressureUnits": "poundPerSquareInch",
+          "momentUnits": "newtonMeter",
+          "accelerationUnits": "meterPerSecondSquared",
+          "angularVelocityUnits": "degreePerSecond",
+          "energyUnits": "joule",
+          "areaUnits": "squareMillimeter",
+          "volumeUnits": "cubicMillimeter",
+          "densityUnits": "gramPerCubicCentimeter",
+          "frequencyUnits": "hertz",
+          "lengthUnits": "millimeter",
+          "filename": null,
+          "thumbnailInfo": null,
+          "thumbnails": null,
+          "microversionId": "a11ce0000000000000000127",
+          "dataType": "onshape/partstudio",
+          "applicationTarget": null,
+          "foreignDataId": null,
+          "unupdatable": false,
+          "safeToShow": true,
+          "specifiedUnit": null,
+          "prettyType": null,
+          "zip": null
+        },
+        {
+          "name": "Assembly 1",
+          "id": "a11ce0000000000000000066",
+          "type": "Assembly",
+          "elementType": "ASSEMBLY",
+          "angleUnits": "degree",
+          "massUnits": "gram",
+          "timeUnits": "second",
+          "forceUnits": "newton",
+          "pressureUnits": "poundPerSquareInch",
+          "momentUnits": "newtonMeter",
+          "accelerationUnits": "meterPerSecondSquared",
+          "angularVelocityUnits": "degreePerSecond",
+          "energyUnits": "joule",
+          "areaUnits": "squareMillimeter",
+          "volumeUnits": "cubicMillimeter",
+          "densityUnits": "gramPerCubicCentimeter",
+          "frequencyUnits": "hertz",
+          "lengthUnits": "millimeter",
+          "filename": null,
+          "thumbnailInfo": null,
+          "thumbnails": null,
+          "microversionId": "a11ce0000000000000000098",
+          "dataType": "onshape/assembly",
+          "applicationTarget": null,
+          "foreignDataId": null,
+          "unupdatable": false,
+          "safeToShow": true,
+          "specifiedUnit": null,
+          "prettyType": null,
+          "zip": null
+        },
+        {
+          "name": "BOM : Assembly 1",
+          "id": "a11ce0000000000000000032",
+          "type": "Bill Of Materials",
+          "elementType": "BILLOFMATERIALS",
+          "angleUnits": null,
+          "massUnits": null,
+          "timeUnits": null,
+          "forceUnits": null,
+          "pressureUnits": null,
+          "momentUnits": null,
+          "accelerationUnits": null,
+          "angularVelocityUnits": null,
+          "energyUnits": null,
+          "areaUnits": null,
+          "volumeUnits": null,
+          "densityUnits": null,
+          "frequencyUnits": null,
+          "lengthUnits": null,
+          "filename": null,
+          "thumbnailInfo": null,
+          "thumbnails": null,
+          "microversionId": "a11ce0000000000000000085",
+          "dataType": "onshape/billofmaterials",
+          "applicationTarget": null,
+          "foreignDataId": null,
+          "unupdatable": false,
+          "safeToShow": true,
+          "specifiedUnit": null,
+          "prettyType": null,
+          "zip": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://cad.onshape.com/api/v17/partstudios/d/a11ce0000000000000000034/w/a11ce0000000000000000043/e/a11ce0000000000000000020/features?rollbackBarIndex=-1&includeGeometryIds=true&noSketchGeometry=false",
+      "status": 200,
+      "requestBody": "[binary or absent]",
+      "responseBody": {
+        "btType": "BTFeatureListResponse-2457",
+        "isComplete": true,
+        "serializationVersion": "1.2.21",
+        "rollbackIndex": 0,
+        "features": [],
+        "sourceMicroversion": "a11ce0000000000000000113",
+        "microversionSkew": false,
+        "rejectMicroversionSkew": false,
+        "libraryVersion": 3070,
+        "featureStates": {
+          "Origin": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          },
+          "Top": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          },
+          "Front": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          },
+          "Right": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          }
+        },
+        "imports": [
+          {
+            "btType": "BTMImport-136",
+            "namespace": "",
+            "nodeId": "M6wX4c3lWiH5VZz0m",
+            "path": "onshape/std/geometry.fs",
+            "version": "3070.0"
+          }
+        ],
+        "defaultFeatures": [
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "",
+            "name": "Origin",
+            "suppressed": false,
+            "parameters": [],
+            "featureId": "Origin",
+            "nodeId": "Mvwiy3DPO/1S9F8zd",
+            "featureType": "origin",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          },
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "",
+            "name": "Top",
+            "suppressed": false,
+            "parameters": [],
+            "featureId": "Top",
+            "nodeId": "MfLAIIU3gwdrXP9+T",
+            "featureType": "defaultPlane",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          },
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "",
+            "name": "Front",
+            "suppressed": false,
+            "parameters": [],
+            "featureId": "Front",
+            "nodeId": "Mn7mb3CqMfM3OhQUf",
+            "featureType": "defaultPlane",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          },
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "",
+            "name": "Right",
+            "suppressed": false,
+            "parameters": [],
+            "featureId": "Right",
+            "nodeId": "Mi9kt+Eke/5J4aDe5",
+            "featureType": "defaultPlane",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          }
+        ]
+      }
+    }
+  ]
+}

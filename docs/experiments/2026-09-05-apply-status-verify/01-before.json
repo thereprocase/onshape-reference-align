@@ -1,0 +1,38 @@
+{
+  "item": {
+    "id": "custom:FycByd6CdezIhLo_0",
+    "kind": "custom",
+    "featureId": "FycByd6CdezIhLo_0",
+    "featureName": "Calibrated Reference Image 1",
+    "label": "Calibrated Reference Image 1 · calibrated feature",
+    "editable": true,
+    "suppressed": false,
+    "context": {
+      "documentId": "a11ce0000000000000000039",
+      "workspaceOrVersion": "w",
+      "workspaceOrVersionId": "a11ce0000000000000000052",
+      "elementId": "a11ce0000000000000000027",
+      "complete": true
+    },
+    "placement": {
+      "width": 0.25,
+      "angle": 0,
+      "originX": 0,
+      "originY": 0
+    },
+    "image": {
+      "blobElementId": "a11ce0000000000000000026",
+      "blobMicroversionId": "a11ce0000000000000000125",
+      "reference": {
+        "documentId": "a11ce0000000000000000039",
+        "workspaceId": "a11ce0000000000000000052",
+        "elementId": "a11ce0000000000000000026",
+        "microversionId": "a11ce0000000000000000125",
+        "fallbackWorkspaceId": "a11ce0000000000000000052"
+      },
+      "proxyAvailable": true
+    },
+    "warnings": []
+  },
+  "featureStateBefore": null
+}

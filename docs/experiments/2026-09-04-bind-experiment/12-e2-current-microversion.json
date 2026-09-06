@@ -1,0 +1,11 @@
+{
+  "name": "e2-current-microversion",
+  "method": "GET",
+  "path": "/documents/d/a11ce0000000000000000039/w/a11ce0000000000000000052/currentmicroversion",
+  "note": null,
+  "requestBody": null,
+  "status": 200,
+  "responseBody": {
+    "microversion": "a11ce0000000000000000054"
+  }
+}

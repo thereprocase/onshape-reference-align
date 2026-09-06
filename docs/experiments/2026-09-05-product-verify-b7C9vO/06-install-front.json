@@ -1,0 +1,25 @@
+{
+  "route": "/api/install",
+  "status": 200,
+  "response": {
+    "ok": true,
+    "alreadyInstalled": false,
+    "created": true,
+    "createdFeatureStudio": true,
+    "featureId": "FJCsL5FBYl62S37_0",
+    "itemId": "custom:FJCsL5FBYl62S37_0",
+    "featureStatus": "OK",
+    "featureStudio": {
+      "id": "a11ce0000000000000000094",
+      "name": "Reference Align Features",
+      "microversionId": "a11ce0000000000000000119"
+    },
+    "imageElementId": "a11ce0000000000000000016",
+    "imageNamespace": "ea11ce0000000000000000016::ma11ce0000000000000000097",
+    "plane": {
+      "id": "default:Front",
+      "label": "Front",
+      "kind": "default"
+    }
+  }
+}

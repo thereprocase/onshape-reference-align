@@ -1,0 +1,20 @@
+{
+  "name": "create-document-private",
+  "method": "POST",
+  "path": "/documents",
+  "note": null,
+  "requestBody": {
+    "name": "Reference Align scratch — safe to delete",
+    "isPublic": false
+  },
+  "status": 409,
+  "error": {
+    "message": "Onshape API request failed with 409 Conflict.",
+    "body": {
+      "message": "Free accounts only allow access to public documents. Upgrade your account to get full access to private documents.",
+      "moreInfoUrl": "",
+      "status": 409,
+      "code": 0
+    }
+  }
+}

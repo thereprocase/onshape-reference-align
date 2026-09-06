@@ -1,0 +1,176 @@
+# Action versions are pinned by full commit SHA, not by tag: a tag can be
+# force-moved after this workflow is reviewed, but a commit SHA cannot. Each
+# SHA below was resolved from the action's own GitHub releases page on
+# 2026-09-05 and should be re-resolved (not copied forward blindly) on any
+# future version bump — see docs/DISTRIBUTION.md for the verification note.
+#   actions/checkout          v7.0.1 — https://github.com/actions/checkout/releases/tag/v7.0.1
+#   actions/setup-node        v7.0.0 — https://github.com/actions/setup-node/releases/tag/v7.0.0
+#   actions/upload-artifact   v7.0.1 — https://github.com/actions/upload-artifact/releases/tag/v7.0.1
+#   actions/download-artifact v8.0.1 — https://github.com/actions/download-artifact/releases/tag/v8.0.1
+#   softprops/action-gh-release v3.0.3 — https://github.com/softprops/action-gh-release/releases/tag/v3.0.3
+#
+# Node is pinned to an exact patch version (24.14.1), not a floating major —
+# see ci.yml's header comment for why (node:sea's getAssetKeys()/getRawAsset()
+# floor, and SEA's Stability 1.1 status).
+#
+# postject is installed and run only in the "build" job below, only as a
+# build-time tool via `npx postject@<pinned>` inside scripts/build-sea.mjs
+# --allow-postject, which itself re-verifies the tarball's registry integrity
+# against a recorded constant before invoking it — see that script's own
+# header comment for where the constant came from.
+#
+# Code signing is optional and secrets-gated: absent
+# APPLE_SIGNING_IDENTITY / WINDOWS_CERT_PFX + WINDOWS_CERT_PASSWORD repo
+# secrets, the release ships an unsigned Windows .exe and an ad-hoc-signed
+# (codesign --sign -, required just to run post-injection) macOS binary.
+# Users will see SmartScreen / Gatekeeper warnings until a maintainer adds
+# real certificates — see docs/DISTRIBUTION.md.
+name: release
+
+permissions:
+  contents: read
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24.14.1'
+      - run: node scripts/check-workflow-yaml.mjs
+      - name: Check release tag matches package version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: node -e "const p=require('./package.json');if(process.env.RELEASE_TAG!=='v'+p.version)throw Error('Release tag must match package.json version');"
+      - run: npm run check
+
+  build:
+    needs: check
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: windows-x64
+            binary: reference-align.exe
+            artifact: reference-align-windows-x64.zip
+            launcher: cmd
+          # Architecture labels verified against GitHub's hosted-runners
+          # reference on 2026-09-05; do not replace Intel with macos-latest.
+          - os: macos-15
+            target: darwin-arm64
+            binary: reference-align
+            artifact: reference-align-macos-arm64.zip
+            launcher: command
+          - os: macos-15-intel
+            target: darwin-x64
+            binary: reference-align
+            artifact: reference-align-macos-x64.zip
+            launcher: command
+          - os: ubuntu-latest
+            target: linux-x64
+            binary: reference-align
+            artifact: reference-align-linux-x64.zip
+            launcher: sh
+    runs-on: ${{ matrix.os }}
+    env:
+      APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+      WINDOWS_CERT_PFX: ${{ secrets.WINDOWS_CERT_PFX }}
+      WINDOWS_CERT_PASSWORD: ${{ secrets.WINDOWS_CERT_PASSWORD }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24.14.1'
+      - run: npm run check
+      - run: node scripts/build-sea.mjs --platform=${{ matrix.target }} --allow-postject
+      - run: node scripts/smoke-binary.mjs dist/${{ matrix.target }}/${{ matrix.binary }}
+
+      # Optional, secrets-gated. Requires a real Developer ID certificate
+      # already imported into the runner's keychain by an earlier (repo-
+      # specific) step; not attempted here since that setup is the
+      # maintainer's own to add once a certificate exists.
+      - name: Sign macOS binary (optional)
+        if: startsWith(matrix.target, 'darwin-') && env.APPLE_SIGNING_IDENTITY != ''
+        run: codesign --sign "$APPLE_SIGNING_IDENTITY" --force dist/${{ matrix.target }}/${{ matrix.binary }}
+
+      # Optional, secrets-gated. signtool ships with the Windows SDK, already
+      # present on the windows-latest runner image.
+      - name: Sign Windows binary (optional)
+        if: matrix.target == 'windows-x64' && env.WINDOWS_CERT_PFX != ''
+        shell: pwsh
+        run: |
+          $pfxPath = Join-Path $env:RUNNER_TEMP "signing-cert.pfx"
+          [IO.File]::WriteAllBytes($pfxPath, [Convert]::FromBase64String($env:WINDOWS_CERT_PFX))
+          signtool sign /fd SHA256 /f $pfxPath /p "$env:WINDOWS_CERT_PASSWORD" dist/${{ matrix.target }}/${{ matrix.binary }}
+          Remove-Item $pfxPath
+
+      - name: Package novice desktop ZIP
+        shell: python
+        env:
+          PACKAGE_TARGET: ${{ matrix.target }}
+          PACKAGE_BINARY: ${{ matrix.binary }}
+          PACKAGE_LAUNCHER: ${{ matrix.launcher }}
+          PACKAGE_ARTIFACT: ${{ matrix.artifact }}
+        run: |
+          import os, pathlib, stat, urllib.request, zipfile
+          target = os.environ['PACKAGE_TARGET']
+          binary = os.environ['PACKAGE_BINARY']
+          launcher = 'START-REFERENCE-ALIGN.' + os.environ['PACKAGE_LAUNCHER']
+          # Node's complete third-party license accompanies the embedded runtime.
+          with urllib.request.urlopen('https://raw.githubusercontent.com/nodejs/node/v24.14.1/LICENSE', timeout=60) as response:
+              node_license = response.read()
+          if b'Node.js' not in node_license:
+              raise ValueError('Unexpected Node license response')
+          entries = [
+              ('START-HERE.html', pathlib.Path('docs/START-HERE.html').read_bytes(), False),
+              ('LICENSE.txt', pathlib.Path('LICENSE').read_bytes(), False),
+              ('NODE-LICENSE.txt', node_license, False),
+              (binary, (pathlib.Path('dist') / target / binary).read_bytes(), True),
+              (launcher, (pathlib.Path('scripts') / launcher).read_bytes(), True),
+          ]
+          with zipfile.ZipFile(os.environ['PACKAGE_ARTIFACT'], 'x') as archive:
+              for name, data, executable in entries:
+                  if name.endswith('.cmd'):
+                      data = data.replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')
+                  info = zipfile.ZipInfo(name)
+                  info.create_system = 3
+                  info.external_attr = (stat.S_IFREG | (0o755 if executable else 0o644)) << 16
+                  info.compress_type = zipfile.ZIP_DEFLATED
+                  archive.writestr(info, data)
+          with zipfile.ZipFile(os.environ['PACKAGE_ARTIFACT']) as archive:
+              if archive.testzip() is not None:
+                  raise ValueError('Desktop ZIP integrity check failed')
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.artifact }}
+          if-no-files-found: error
+          retention-days: 3
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          path: dist-release
+          merge-multiple: true
+      - name: Compute SHA256SUMS
+        working-directory: dist-release
+        run: sha256sum * > SHA256SUMS
+      - uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
+        with:
+          files: dist-release/*
+          generate_release_notes: true

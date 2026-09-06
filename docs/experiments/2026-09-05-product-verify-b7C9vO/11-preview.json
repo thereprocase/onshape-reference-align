@@ -1,0 +1,74 @@
+{
+  "route": "/api/preview",
+  "status": 200,
+  "response": {
+    "item": {
+      "id": "custom:FJCsL5FBYl62S37_0",
+      "kind": "custom",
+      "featureId": "FJCsL5FBYl62S37_0",
+      "featureName": "Calibrated Reference Image 1",
+      "label": "Calibrated Reference Image 1 · calibrated feature",
+      "editable": true,
+      "suppressed": false,
+      "context": {
+        "documentId": "a11ce0000000000000000118",
+        "workspaceOrVersion": "w",
+        "workspaceOrVersionId": "a11ce0000000000000000049",
+        "elementId": "a11ce0000000000000000117",
+        "complete": true
+      },
+      "placement": {
+        "width": 0.25,
+        "angle": 0,
+        "originX": 0,
+        "originY": 0
+      },
+      "image": {
+        "blobElementId": "a11ce0000000000000000016",
+        "blobMicroversionId": "a11ce0000000000000000097",
+        "reference": {
+          "documentId": "a11ce0000000000000000118",
+          "elementId": "a11ce0000000000000000016",
+          "microversionId": "a11ce0000000000000000097",
+          "fallbackWorkspaceId": "a11ce0000000000000000049"
+        },
+        "proxyAvailable": true
+      },
+      "warnings": []
+    },
+    "placement": {
+      "originX": -0.0560612664940877,
+      "originY": 0.06070265747446554,
+      "width": 0.26009599999999994,
+      "angle": 5.497787143782138
+    },
+    "diagnostics": {
+      "aspectRatio": 1,
+      "oldWidth": 0.25,
+      "newWidth": 0.26009599999999994,
+      "scaleFactor": 1.0403839999999998,
+      "oldAngle": 0,
+      "newAngle": 5.497787143782138,
+      "rotationDelta": -0.7853981633974492,
+      "scalePairBeforeLength": 0.146484375,
+      "scalePairAfterLength": 0.15239999999999998,
+      "requestedDistance": 0.15239999999999998,
+      "rotationPairBeforeAngle": 0.7853981633974483,
+      "rotationPairAfterAngle": -2.414635301863582e-16,
+      "requestedPairAngle": 0,
+      "anchorPixel": {
+        "x": 50,
+        "y": 160
+      },
+      "anchorBefore": {
+        "x": 0.048828125,
+        "y": 0.09375
+      },
+      "anchorAfter": {
+        "x": 0.048828125,
+        "y": 0.09375
+      },
+      "anchorResidual": 0
+    }
+  }
+}

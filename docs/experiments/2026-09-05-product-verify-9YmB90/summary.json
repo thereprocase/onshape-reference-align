@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "checks": [
+    "default plane candidates",
+    "upload and install on Front through HTTP",
+    "user plane and sketch candidates"
+  ],
+  "context": {
+    "documentId": "a11ce0000000000000000147",
+    "workspaceOrVersion": "w",
+    "workspaceOrVersionId": "a11ce0000000000000000048",
+    "elementId": "a11ce0000000000000000139"
+  },
+  "documentUrl": "https://cad.onshape.com/documents/a11ce0000000000000000147/w/a11ce0000000000000000048/e/a11ce0000000000000000139",
+  "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  [\n    {\n      btType: 'BTMParameterReferenceImage-2014',\n      elementLibraryData: null,\n      libraryRelationType: 'DEFAULT',\n      namespace: 'ea11ce0000000000000000116::ma11ce0000000000000000088',\n+     nodeId: 'M4AbEJBFxaVCx0UJF',\n-     nodeId: 'Mm6D3WUQzCy/w9bGg',\n      parameterId: 'image',\n      parameterName: ''\n    },\n    {\n      btType: 'BTMParameterQuantity-147',\n...\n      libraryRelationType: 'DEFAULT',\n+     nodeId: 'MZpaLrNcEFiwxTh/1',\n-     nodeId: 'MKqqoYjmTVIHFGeOR',\n      parameterId: 'imageWidth',\n      parameterName: '',\n      units: '',\n      value: 0\n    },\n...\n      libraryRelationType: 'DEFAULT',\n+     nodeId: 'M+/x6n35U7hzbG0s0',\n-     nodeId: 'MkZ4OAKalWbf7W832',\n      parameterId: 'imageAngle',\n      parameterName: '',\n      units: '',\n      value: 0\n    },\n...\n      libraryRelationType: 'DEFAULT',\n+     nodeId: 'MQnO24/wxxPv1FEfB',\n-     nodeId: 'Ma4fICuoGfYZtwzGI',\n      parameterId: 'originX',\n      parameterName: '',\n      units: '',\n      value: 0\n    },\n...\n      libraryRelationType: 'DEFAULT',\n+     nodeId: 'Mz6LwR9WMW++Zhrkc',\n-     nodeId: 'MdvqS+MuWLCdZgBav',\n      parameterId: 'originY',\n      parameterName: '',\n      units: '',\n      value: 0\n    }\n"
+}

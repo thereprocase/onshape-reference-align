@@ -1,0 +1,236 @@
+{
+  "route": "/api/install/status?documentId=a11ce0000000000000000147&workspaceOrVersion=w&workspaceOrVersionId=a11ce0000000000000000048&elementId=a11ce0000000000000000139&itemId=custom%3AFsHp9uE3PCs5HQQ_0",
+  "status": 200,
+  "response": {
+    "context": {
+      "documentId": "a11ce0000000000000000147",
+      "workspaceOrVersion": "w",
+      "workspaceOrVersionId": "a11ce0000000000000000048",
+      "elementId": "a11ce0000000000000000139",
+      "complete": true
+    },
+    "available": true,
+    "install": {
+      "state": "instance-present",
+      "featureStudio": {
+        "id": "a11ce0000000000000000112",
+        "name": "Reference Align Features",
+        "microversionId": "a11ce0000000000000000041"
+      },
+      "markedStudioIds": [
+        "a11ce0000000000000000112"
+      ],
+      "unreadStudioIds": [],
+      "instances": [
+        {
+          "featureId": "FsHp9uE3PCs5HQQ_0",
+          "name": "Calibrated Reference Image 1",
+          "namespace": "ea11ce0000000000000000112::ma11ce0000000000000000041",
+          "suppressed": false
+        }
+      ],
+      "imageElements": [
+        {
+          "id": "a11ce0000000000000000116",
+          "name": "acceptance.png",
+          "dataType": "image/png",
+          "microversionId": "a11ce0000000000000000088",
+          "bindable": true
+        }
+      ]
+    },
+    "planes": [
+      {
+        "id": "default:Top",
+        "label": "Top",
+        "kind": "default",
+        "query": {
+          "btType": "BTMParameterQueryList-148",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCreatedBy(makeId(\"Top\"), EntityType.FACE);",
+              "deterministicIds": [
+                "JDC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "parameterId": "plane"
+        }
+      },
+      {
+        "id": "default:Front",
+        "label": "Front",
+        "kind": "default",
+        "query": {
+          "btType": "BTMParameterQueryList-148",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCreatedBy(makeId(\"Front\"), EntityType.FACE);",
+              "deterministicIds": [
+                "JCC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "parameterId": "plane"
+        }
+      },
+      {
+        "id": "default:Right",
+        "label": "Right",
+        "kind": "default",
+        "query": {
+          "btType": "BTMParameterQueryList-148",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCreatedBy(makeId(\"Right\"), EntityType.FACE);",
+              "deterministicIds": [
+                "JEC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "parameterId": "plane"
+        }
+      },
+      {
+        "id": "plane:FzoLBEFDqSZNe71_0",
+        "label": "Acceptance offset plane",
+        "kind": "plane-feature",
+        "featureId": "FzoLBEFDqSZNe71_0",
+        "query": {
+          "btType": "BTMParameterQueryList-148",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCreatedBy(makeId(\"FzoLBEFDqSZNe71_0\"), EntityType.FACE);",
+              "deterministicIds": [
+                "JFC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "parameterId": "plane"
+        }
+      },
+      {
+        "id": "sketch:FV65vpewHp1sFdF_0",
+        "label": "Same plane as Acceptance Front sketch",
+        "kind": "sketch",
+        "featureId": "FV65vpewHp1sFdF_0",
+        "query": {
+          "btType": "BTMParameterQueryList-148",
+          "libraryRelationType": "DEFAULT",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S5.7$FrontplaneOpS9$queryTypeS5$DUMMY\",id);",
+              "nodeId": "M5qvPF6fhuizkgiOE",
+              "deterministicIds": [
+                "JCC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTOrFilter-167",
+            "operand1": {
+              "btType": "BTOrFilter-167",
+              "operand1": {
+                "btType": "BTAndFilter-110",
+                "operand1": {
+                  "btType": "BTGeometryFilter-130",
+                  "geometryType": "PLANE"
+                },
+                "operand2": {
+                  "btType": "BTFlatSheetMetalFilter-3018",
+                  "allows": "MODEL_ONLY"
+                }
+              },
+              "operand2": {
+                "btType": "BTAndFilter-110",
+                "operand1": {
+                  "btType": "BTAndFilter-110",
+                  "operand1": {
+                    "btType": "BTSMDefinitionEntityTypeFilter-1651",
+                    "smDefinitionEntityType": "FACE"
+                  },
+                  "operand2": {
+                    "btType": "BTFlatSheetMetalFilter-3018",
+                    "allows": "MODEL_AND_FLATTENED"
+                  }
+                },
+                "operand2": {
+                  "btType": "BTGeometryFilter-130",
+                  "geometryType": "PLANE"
+                }
+              }
+            },
+            "operand2": {
+              "btType": "BTBodyTypeFilter-112",
+              "bodyType": "MATE_CONNECTOR"
+            }
+          },
+          "nodeId": "MrVNKiZ4+FsrosPNA",
+          "parameterId": "sketchPlane",
+          "parameterName": ""
+        }
+      }
+    ],
+    "selectedPlane": {
+      "id": "default:Front",
+      "label": "Front",
+      "kind": "default"
+    },
+    "marker": "reference-align-feature: 1",
+    "maxImageUploadBytes": 26214400
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "route": "/api/replane",
+  "status": 200,
+  "response": {
+    "ok": true,
+    "featureStatus": "OK",
+    "backupFile": "2026-09-05T23-58-42-735Z__a11ce0000000000000000147__a11ce0000000000000000139__FsHp9uE3PCs5HQQ_0__0bcfc5.json",
+    "plane": {
+      "id": "default:Right",
+      "label": "Right",
+      "kind": "default"
+    },
+    "item": {
+      "id": "custom:FsHp9uE3PCs5HQQ_0",
+      "kind": "custom",
+      "featureId": "FsHp9uE3PCs5HQQ_0",
+      "featureName": "Calibrated Reference Image 1",
+      "label": "Calibrated Reference Image 1 · calibrated feature",
+      "editable": true,
+      "suppressed": false,
+      "context": {
+        "documentId": "a11ce0000000000000000147",
+        "workspaceOrVersion": "w",
+        "workspaceOrVersionId": "a11ce0000000000000000048",
+        "elementId": "a11ce0000000000000000139",
+        "complete": true
+      },
+      "placement": {
+        "width": 0.25,
+        "angle": 0,
+        "originX": 0,
+        "originY": 0
+      },
+      "image": {
+        "blobElementId": "a11ce0000000000000000116",
+        "blobMicroversionId": "a11ce0000000000000000088",
+        "reference": {
+          "documentId": "a11ce0000000000000000147",
+          "elementId": "a11ce0000000000000000116",
+          "microversionId": "a11ce0000000000000000088",
+          "fallbackWorkspaceId": "a11ce0000000000000000048"
+        },
+        "proxyAvailable": true
+      },
+      "warnings": []
+    },
+    "items": [
+      {
+        "id": "custom:FsHp9uE3PCs5HQQ_0",
+        "kind": "custom",
+        "featureId": "FsHp9uE3PCs5HQQ_0",
+        "featureName": "Calibrated Reference Image 1",
+        "label": "Calibrated Reference Image 1 · calibrated feature",
+        "editable": true,
+        "suppressed": false,
+        "context": {
+          "documentId": "a11ce0000000000000000147",
+          "workspaceOrVersion": "w",
+          "workspaceOrVersionId": "a11ce0000000000000000048",
+          "elementId": "a11ce0000000000000000139",
+          "complete": true
+        },
+        "placement": {
+          "width": 0.25,
+          "angle": 0,
+          "originX": 0,
+          "originY": 0
+        },
+        "image": {
+          "blobElementId": "a11ce0000000000000000116",
+          "blobMicroversionId": "a11ce0000000000000000088",
+          "reference": {
+            "documentId": "a11ce0000000000000000147",
+            "elementId": "a11ce0000000000000000116",
+            "microversionId": "a11ce0000000000000000088",
+            "fallbackWorkspaceId": "a11ce0000000000000000048"
+          },
+          "proxyAvailable": true
+        },
+        "warnings": []
+      }
+    ],
+    "itemsStale": false
+  }
+}

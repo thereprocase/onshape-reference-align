@@ -1,0 +1,158 @@
+{
+  "btType": "BTFeatureDefinitionResponse-1617",
+  "rejectMicroversionSkew": false,
+  "microversionSkew": false,
+  "featureState": {
+    "btType": "BTFeatureState-1688",
+    "featureStatus": "OK",
+    "inactive": false
+  },
+  "feature": {
+    "btType": "BTMFeature-134",
+    "namespace": "",
+    "name": "Acceptance offset plane",
+    "suppressed": false,
+    "parameters": [
+      {
+        "btType": "BTMParameterEnum-145",
+        "namespace": "",
+        "nodeId": "Mi07QCVK3Rg8TkfZt",
+        "libraryRelationType": "DEFAULT",
+        "enumName": "CPlaneType",
+        "value": "OFFSET",
+        "parameterId": "cplaneType",
+        "parameterName": ""
+      },
+      {
+        "btType": "BTMParameterQueryList-148",
+        "libraryRelationType": "DEFAULT",
+        "queries": [
+          {
+            "btType": "BTMIndividualQuery-138",
+            "queryStatement": null,
+            "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S3.7$TopplaneOpS9$queryTypeS5$DUMMY\",id);",
+            "nodeId": "M8nZtMgk2Mtb8zk0N",
+            "deterministicIds": [
+              "JDC"
+            ]
+          }
+        ],
+        "filter": {
+          "btType": "BTOrFilter-167",
+          "operand1": {
+            "btType": "BTOrFilter-167",
+            "operand1": {
+              "btType": "BTOrFilter-167",
+              "operand1": {
+                "btType": "BTOrFilter-167",
+                "operand1": {
+                  "btType": "BTOrFilter-167",
+                  "operand1": {
+                    "btType": "BTGeometryFilter-130",
+                    "geometryType": "PLANE"
+                  },
+                  "operand2": {
+                    "btType": "BTEntityTypeFilter-124",
+                    "entityType": "VERTEX"
+                  }
+                },
+                "operand2": {
+                  "btType": "BTOrFilter-167",
+                  "operand1": {
+                    "btType": "BTOrFilter-167",
+                    "operand1": {
+                      "btType": "BTGeometryFilter-130",
+                      "geometryType": "LINE"
+                    },
+                    "operand2": {
+                      "btType": "BTOrFilter-167",
+                      "operand1": {
+                        "btType": "BTGeometryFilter-130",
+                        "geometryType": "CIRCLE"
+                      },
+                      "operand2": {
+                        "btType": "BTOrFilter-167",
+                        "operand1": {
+                          "btType": "BTGeometryFilter-130",
+                          "geometryType": "ARC"
+                        },
+                        "operand2": {
+                          "btType": "BTOrFilter-167",
+                          "operand1": {
+                            "btType": "BTGeometryFilter-130",
+                            "geometryType": "CYLINDER"
+                          },
+                          "operand2": {
+                            "btType": "BTOrFilter-167",
+                            "operand1": {
+                              "btType": "BTGeometryFilter-130",
+                              "geometryType": "CONE"
+                            },
+                            "operand2": {
+                              "btType": "BTGeometryFilter-130",
+                              "geometryType": "REVOLVED"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "operand2": {
+                    "btType": "BTMateConnectorFilter-163",
+                    "isMateConnectorInferenceEnabledByDefault": false,
+                    "requiresOccurrence": false,
+                    "allowImplicitMateConnector": false
+                  }
+                }
+              },
+              "operand2": {
+                "btType": "BTEntityTypeFilter-124",
+                "entityType": "EDGE"
+              }
+            },
+            "operand2": {
+              "btType": "BTBodyTypeFilter-112",
+              "bodyType": "MATE_CONNECTOR"
+            }
+          },
+          "operand2": {
+            "btType": "BTAllowMeshGeometryFilter-1026",
+            "allowsMeshGeometry": true
+          }
+        },
+        "nodeId": "MwfL3h43B+l5autZi",
+        "parameterId": "entities",
+        "parameterName": ""
+      },
+      {
+        "btType": "BTMParameterQuantity-147",
+        "isInteger": false,
+        "libraryRelationType": "DEFAULT",
+        "value": 0,
+        "units": "",
+        "expression": "0.01 m",
+        "nodeId": "MkopzKk/OrCE/GzSm",
+        "parameterId": "offset",
+        "parameterName": ""
+      },
+      {
+        "btType": "BTMParameterBoolean-144",
+        "libraryRelationType": "DEFAULT",
+        "value": false,
+        "nodeId": "MVvPPgcyHBe8CPsne",
+        "parameterId": "oppositeDirection",
+        "parameterName": ""
+      }
+    ],
+    "featureId": "FOyh5rsOR477Svs_0",
+    "nodeId": "MgViqZsPRgq7EZQVH",
+    "featureType": "cPlane",
+    "returnAfterSubfeatures": false,
+    "subFeatures": [],
+    "parameterLibraries": [],
+    "suppressionState": null
+  },
+  "libraryVersion": 0,
+  "serializationVersion": "1.2.21",
+  "sourceMicroversion": "a11ce0000000000000000146"
+}

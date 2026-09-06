@@ -1,0 +1,441 @@
+{
+  "name": "install-status-after",
+  "route": "GET /api/install/status?documentId=a11ce0000000000000000034&workspaceOrVersion=w&workspaceOrVersionId=a11ce0000000000000000043&elementId=a11ce0000000000000000020",
+  "requestBody": null,
+  "status": 200,
+  "responseBody": {
+    "context": {
+      "documentId": "a11ce0000000000000000034",
+      "workspaceOrVersion": "w",
+      "workspaceOrVersionId": "a11ce0000000000000000043",
+      "elementId": "a11ce0000000000000000020",
+      "complete": true
+    },
+    "available": true,
+    "install": {
+      "state": "instance-present",
+      "featureStudio": {
+        "id": "a11ce0000000000000000033",
+        "name": "Reference Align Features",
+        "microversionId": "a11ce0000000000000000129"
+      },
+      "markedStudioIds": [
+        "a11ce0000000000000000033"
+      ],
+      "unreadStudioIds": [],
+      "instances": [
+        {
+          "featureId": "F58Yh6RwSkKzFCu_0",
+          "name": "Calibrated Reference Image 1",
+          "namespace": "ea11ce0000000000000000033::ma11ce0000000000000000129",
+          "suppressed": false
+        }
+      ],
+      "imageElements": [
+        {
+          "id": "a11ce0000000000000000071",
+          "name": "reference-align-icon-a.png",
+          "dataType": "image/png",
+          "microversionId": "a11ce0000000000000000002",
+          "bindable": true
+        }
+      ]
+    },
+    "marker": "reference-align-feature: 1",
+    "maxImageUploadBytes": 26214400
+  },
+  "onshapeTraffic": [
+    {
+      "method": "GET",
+      "url": "https://cad.onshape.com/api/v17/documents/d/a11ce0000000000000000034/w/a11ce0000000000000000043/elements",
+      "status": 200,
+      "requestBody": "[binary or absent]",
+      "responseBody": [
+        {
+          "name": "Part Studio 1",
+          "id": "a11ce0000000000000000020",
+          "type": "Part Studio",
+          "elementType": "PARTSTUDIO",
+          "angleUnits": "degree",
+          "massUnits": "gram",
+          "timeUnits": "second",
+          "forceUnits": "newton",
+          "pressureUnits": "poundPerSquareInch",
+          "momentUnits": "newtonMeter",
+          "accelerationUnits": "meterPerSecondSquared",
+          "angularVelocityUnits": "degreePerSecond",
+          "energyUnits": "joule",
+          "areaUnits": "squareMillimeter",
+          "volumeUnits": "cubicMillimeter",
+          "densityUnits": "gramPerCubicCentimeter",
+          "frequencyUnits": "hertz",
+          "lengthUnits": "millimeter",
+          "dataType": "onshape/partstudio",
+          "filename": null,
+          "thumbnailInfo": null,
+          "thumbnails": null,
+          "microversionId": "a11ce0000000000000000108",
+          "applicationTarget": null,
+          "foreignDataId": null,
+          "unupdatable": false,
+          "safeToShow": true,
+          "specifiedUnit": null,
+          "prettyType": null,
+          "zip": null
+        },
+        {
+          "name": "Assembly 1",
+          "id": "a11ce0000000000000000066",
+          "type": "Assembly",
+          "elementType": "ASSEMBLY",
+          "angleUnits": "degree",
+          "massUnits": "gram",
+          "timeUnits": "second",
+          "forceUnits": "newton",
+          "pressureUnits": "poundPerSquareInch",
+          "momentUnits": "newtonMeter",
+          "accelerationUnits": "meterPerSecondSquared",
+          "angularVelocityUnits": "degreePerSecond",
+          "energyUnits": "joule",
+          "areaUnits": "squareMillimeter",
+          "volumeUnits": "cubicMillimeter",
+          "densityUnits": "gramPerCubicCentimeter",
+          "frequencyUnits": "hertz",
+          "lengthUnits": "millimeter",
+          "dataType": "onshape/assembly",
+          "filename": null,
+          "thumbnailInfo": null,
+          "thumbnails": null,
+          "microversionId": "a11ce0000000000000000098",
+          "applicationTarget": null,
+          "foreignDataId": null,
+          "unupdatable": false,
+          "safeToShow": true,
+          "specifiedUnit": null,
+          "prettyType": null,
+          "zip": null
+        },
+        {
+          "name": "BOM : Assembly 1",
+          "id": "a11ce0000000000000000032",
+          "type": "Bill Of Materials",
+          "elementType": "BILLOFMATERIALS",
+          "angleUnits": null,
+          "massUnits": null,
+          "timeUnits": null,
+          "forceUnits": null,
+          "pressureUnits": null,
+          "momentUnits": null,
+          "accelerationUnits": null,
+          "angularVelocityUnits": null,
+          "energyUnits": null,
+          "areaUnits": null,
+          "volumeUnits": null,
+          "densityUnits": null,
+          "frequencyUnits": null,
+          "lengthUnits": null,
+          "dataType": "onshape/billofmaterials",
+          "filename": null,
+          "thumbnailInfo": null,
+          "thumbnails": null,
+          "microversionId": "a11ce0000000000000000085",
+          "applicationTarget": null,
+          "foreignDataId": null,
+          "unupdatable": false,
+          "safeToShow": true,
+          "specifiedUnit": null,
+          "prettyType": null,
+          "zip": null
+        },
+        {
+          "name": "reference-align-icon-a.png",
+          "id": "a11ce0000000000000000071",
+          "type": "Blob",
+          "elementType": "BLOB",
+          "angleUnits": null,
+          "massUnits": null,
+          "timeUnits": null,
+          "forceUnits": null,
+          "pressureUnits": null,
+          "momentUnits": null,
+          "accelerationUnits": null,
+          "angularVelocityUnits": null,
+          "energyUnits": null,
+          "areaUnits": null,
+          "volumeUnits": null,
+          "densityUnits": null,
+          "frequencyUnits": null,
+          "lengthUnits": null,
+          "dataType": "image/png",
+          "filename": "reference-align-icon-a.png",
+          "thumbnailInfo": null,
+          "thumbnails": null,
+          "microversionId": "a11ce0000000000000000002",
+          "applicationTarget": null,
+          "foreignDataId": "a11ce0000000000000000077",
+          "unupdatable": false,
+          "safeToShow": true,
+          "specifiedUnit": "",
+          "prettyType": "PNG (.png)",
+          "zip": null
+        },
+        {
+          "name": "Reference Align Features",
+          "id": "a11ce0000000000000000033",
+          "type": "Feature Studio",
+          "elementType": "FEATURESTUDIO",
+          "angleUnits": null,
+          "massUnits": null,
+          "timeUnits": null,
+          "forceUnits": null,
+          "pressureUnits": null,
+          "momentUnits": null,
+          "accelerationUnits": null,
+          "angularVelocityUnits": null,
+          "energyUnits": null,
+          "areaUnits": null,
+          "volumeUnits": null,
+          "densityUnits": null,
+          "frequencyUnits": null,
+          "lengthUnits": null,
+          "dataType": "onshape/featurestudio",
+          "filename": null,
+          "thumbnailInfo": null,
+          "thumbnails": null,
+          "microversionId": "a11ce0000000000000000129",
+          "applicationTarget": null,
+          "foreignDataId": null,
+          "unupdatable": false,
+          "safeToShow": true,
+          "specifiedUnit": null,
+          "prettyType": null,
+          "zip": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://cad.onshape.com/api/v17/partstudios/d/a11ce0000000000000000034/w/a11ce0000000000000000043/e/a11ce0000000000000000020/features?rollbackBarIndex=-1&includeGeometryIds=true&noSketchGeometry=false",
+      "status": 200,
+      "requestBody": "[binary or absent]",
+      "responseBody": {
+        "btType": "BTFeatureListResponse-2457",
+        "isComplete": true,
+        "serializationVersion": "1.2.21",
+        "rollbackIndex": 1,
+        "features": [
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "ea11ce0000000000000000033::ma11ce0000000000000000129",
+            "name": "Calibrated Reference Image 1",
+            "suppressed": false,
+            "parameters": [
+              {
+                "btType": "BTMParameterReferenceImage-2014",
+                "elementLibraryData": null,
+                "libraryRelationType": "DEFAULT",
+                "namespace": "ea11ce0000000000000000071::ma11ce0000000000000000002",
+                "nodeId": "MAvFGhOZ7M4PEA5XT",
+                "parameterId": "image",
+                "parameterName": ""
+              },
+              {
+                "btType": "BTMParameterQueryList-148",
+                "libraryRelationType": "DEFAULT",
+                "queries": [
+                  {
+                    "btType": "BTMIndividualQuery-138",
+                    "queryStatement": null,
+                    "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S3.7$TopplaneOpS9$queryTypeS5$DUMMY\",id);",
+                    "nodeId": "MRa1UB6HqEERbDSkW",
+                    "deterministicIds": [
+                      "JDC"
+                    ]
+                  }
+                ],
+                "filter": {
+                  "btType": "BTAndFilter-110",
+                  "operand1": {
+                    "btType": "BTEntityTypeFilter-124",
+                    "entityType": "FACE"
+                  },
+                  "operand2": {
+                    "btType": "BTGeometryFilter-130",
+                    "geometryType": "PLANE"
+                  }
+                },
+                "nodeId": "MiEZYQfIvL5P+omNd",
+                "parameterId": "plane",
+                "parameterName": ""
+              },
+              {
+                "btType": "BTMParameterQuantity-147",
+                "libraryRelationType": "DEFAULT",
+                "isInteger": false,
+                "value": 0,
+                "units": "",
+                "expression": "0.25 m",
+                "nodeId": "MmY8CT4XNhTexoWGF",
+                "parameterId": "imageWidth",
+                "parameterName": ""
+              },
+              {
+                "btType": "BTMParameterQuantity-147",
+                "libraryRelationType": "DEFAULT",
+                "isInteger": false,
+                "value": 0,
+                "units": "",
+                "expression": "0 deg",
+                "nodeId": "M+yNh2Z3LLJXPLGFJ",
+                "parameterId": "imageAngle",
+                "parameterName": ""
+              },
+              {
+                "btType": "BTMParameterQuantity-147",
+                "libraryRelationType": "DEFAULT",
+                "isInteger": false,
+                "value": 0,
+                "units": "",
+                "expression": "0 m",
+                "nodeId": "MAsOMiTdGiW1oGvJl",
+                "parameterId": "originX",
+                "parameterName": ""
+              },
+              {
+                "btType": "BTMParameterQuantity-147",
+                "libraryRelationType": "DEFAULT",
+                "isInteger": false,
+                "value": 0,
+                "units": "",
+                "expression": "0 m",
+                "nodeId": "MdJ6YAHGlnkQ1O4+M",
+                "parameterId": "originY",
+                "parameterName": ""
+              }
+            ],
+            "featureId": "F58Yh6RwSkKzFCu_0",
+            "nodeId": "Mr1scZ9ZXgOk22g5R",
+            "featureType": "referenceImage",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          }
+        ],
+        "sourceMicroversion": "a11ce0000000000000000067",
+        "microversionSkew": false,
+        "rejectMicroversionSkew": false,
+        "libraryVersion": 3070,
+        "featureStates": {
+          "Origin": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          },
+          "Top": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          },
+          "Front": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          },
+          "Right": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          },
+          "F58Yh6RwSkKzFCu_0": {
+            "btType": "BTFeatureState-1688",
+            "featureStatus": "OK",
+            "inactive": false
+          }
+        },
+        "imports": [
+          {
+            "btType": "BTMImport-136",
+            "namespace": "",
+            "nodeId": "M6wX4c3lWiH5VZz0m",
+            "path": "onshape/std/geometry.fs",
+            "version": "3070.0"
+          }
+        ],
+        "defaultFeatures": [
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "",
+            "name": "Origin",
+            "suppressed": false,
+            "parameters": [],
+            "featureId": "Origin",
+            "nodeId": "Mvwiy3DPO/1S9F8zd",
+            "featureType": "origin",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          },
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "",
+            "name": "Top",
+            "suppressed": false,
+            "parameters": [],
+            "featureId": "Top",
+            "nodeId": "MfLAIIU3gwdrXP9+T",
+            "featureType": "defaultPlane",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          },
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "",
+            "name": "Front",
+            "suppressed": false,
+            "parameters": [],
+            "featureId": "Front",
+            "nodeId": "Mn7mb3CqMfM3OhQUf",
+            "featureType": "defaultPlane",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          },
+          {
+            "btType": "BTMFeature-134",
+            "namespace": "",
+            "name": "Right",
+            "suppressed": false,
+            "parameters": [],
+            "featureId": "Right",
+            "nodeId": "Mi9kt+Eke/5J4aDe5",
+            "featureType": "defaultPlane",
+            "returnAfterSubfeatures": false,
+            "subFeatures": [],
+            "parameterLibraries": [],
+            "suppressionState": null
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://cad.onshape.com/api/v17/featurestudios/d/a11ce0000000000000000034/w/a11ce0000000000000000043/e/a11ce0000000000000000033",
+      "status": 200,
+      "requestBody": "[binary or absent]",
+      "responseBody": {
+        "btType": "BTFeatureStudioContents-2239",
+        "contents": "FeatureScript 2770;\nimport(path : \"onshape/std/common.fs\", version : \"2770.0\");\n\n// reference-align-feature: 1\n// Version marker. The app recognises an installed Feature Studio by this\n// exact token, so it can tell \"already installed\" from \"a studio that looks\n// similar\" without diffing source an operator may have edited. Bump the\n// number only when an installed studio must be replaced rather than reused.\n\n// A reference image may sit on either side of the selected plane's canonical\n// origin, so these coordinate bounds must allow signed lengths.\nconst SIGNED_LENGTH_BOUNDS = {\n        (meter) : [-100000, 0, 100000]\n    } as LengthBoundSpec;\n\nconst IMAGE_WIDTH_BOUNDS = {\n        (meter) : [0.000001, 0.25, 100000]\n    } as LengthBoundSpec;\n\nconst FULL_ANGLE_BOUNDS = {\n        (degree) : [-360000, 0, 360000]\n    } as AngleBoundSpec;\n\nannotation { \"Feature Type Name\" : \"Calibrated Reference Image\" }\nexport const referenceImage = defineFeature(function(context is Context, id is Id, definition is map)\n    precondition\n    {\n        annotation { \"Name\" : \"Image\" }\n        definition.image is ImageData;\n\n        annotation {\n            \"Name\" : \"Sketch plane\",\n            \"Filter\" : EntityType.FACE && GeometryType.PLANE,\n            \"MaxNumberOfPicks\" : 1\n        }\n        definition.plane is Query;\n\n        annotation { \"Name\" : \"Image width\" }\n        isLength(definition.imageWidth, IMAGE_WIDTH_BOUNDS);\n\n        annotation { \"Name\" : \"Image angle\" }\n        isAngle(definition.imageAngle, FULL_ANGLE_BOUNDS);\n\n        annotation { \"Name\" : \"Origin X\" }\n        isLength(definition.originX, SIGNED_LENGTH_BOUNDS);\n\n        annotation { \"Name\" : \"Origin Y\" }\n        isLength(definition.originY, SIGNED_LENGTH_BOUNDS);\n    }\n    {\n        // Match the same canonical coordinate system that a normal sketch on the\n        // selected plane would use. The app expresses originX/originY in this\n        // coordinate system.\n        const basePlane = alignCanonically(context, evPlane(context, {\n                    \"face\" : definition.plane\n                }));\n        const baseY = yAxis(basePlane);\n\n        // Turn the image placement into a custom sketch plane. skImage itself is\n        // axis-aligned in its sketch, while the custom plane carries translation\n        // and rotation in the selected plane.\n        const imageOriginWorld = planeToWorld(basePlane,\n                vector(definition.originX, definition.originY));\n        const imageXWorld = cos(definition.imageAngle) * basePlane.x +\n                sin(definition.imageAngle) * baseY;\n        const imagePlane = plane(imageOriginWorld, basePlane.normal, imageXWorld);\n\n        var imageSketch = newSketchOnPlane(context, id + \"imageSketch\", {\n                \"sketchPlane\" : imagePlane\n            });\n\n        // Giving skImage a horizontal width vector preserves source aspect ratio\n        // and makes Onshape calculate the image height automatically.\n        skImage(imageSketch, \"referenceImage\", {\n                \"blobInfo\" : definition.image,\n                \"firstCorner\" : vector(0 * meter, 0 * meter),\n                \"secondCorner\" : vector(definition.imageWidth, 0 * meter)\n            });\n        skSolve(imageSketch);\n    });\n",
+        "rejectMicroversionSkew": false,
+        "microversionSkew": false,
+        "libraryVersion": 0,
+        "sourceMicroversion": "a11ce0000000000000000067",
+        "serializationVersion": "1.2.21"
+      }
+    }
+  ]
+}

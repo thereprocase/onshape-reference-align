@@ -1,0 +1,108 @@
+{
+  "name": "e3-features-before",
+  "method": "GET",
+  "path": "/partstudios/d/a11ce0000000000000000039/w/a11ce0000000000000000052/e/a11ce0000000000000000027/features",
+  "note": null,
+  "requestBody": null,
+  "status": 200,
+  "responseBody": {
+    "btType": "BTFeatureListResponse-2457",
+    "isComplete": true,
+    "serializationVersion": "1.2.21",
+    "rollbackIndex": 0,
+    "features": [],
+    "sourceMicroversion": "a11ce0000000000000000054",
+    "microversionSkew": false,
+    "rejectMicroversionSkew": false,
+    "libraryVersion": 3070,
+    "featureStates": {
+      "Origin": {
+        "btType": "BTFeatureState-1688",
+        "featureStatus": "OK",
+        "inactive": false
+      },
+      "Top": {
+        "btType": "BTFeatureState-1688",
+        "featureStatus": "OK",
+        "inactive": false
+      },
+      "Front": {
+        "btType": "BTFeatureState-1688",
+        "featureStatus": "OK",
+        "inactive": false
+      },
+      "Right": {
+        "btType": "BTFeatureState-1688",
+        "featureStatus": "OK",
+        "inactive": false
+      }
+    },
+    "imports": [
+      {
+        "btType": "BTMImport-136",
+        "namespace": "",
+        "nodeId": "MGRwledvRIWswbPHa",
+        "path": "onshape/std/geometry.fs",
+        "version": "3070.0"
+      }
+    ],
+    "defaultFeatures": [
+      {
+        "btType": "BTMFeature-134",
+        "name": "Origin",
+        "suppressed": false,
+        "parameters": [],
+        "namespace": "",
+        "featureId": "Origin",
+        "nodeId": "MDtaODPLoerbOpZWY",
+        "featureType": "origin",
+        "returnAfterSubfeatures": false,
+        "subFeatures": [],
+        "parameterLibraries": [],
+        "suppressionState": null
+      },
+      {
+        "btType": "BTMFeature-134",
+        "name": "Top",
+        "suppressed": false,
+        "parameters": [],
+        "namespace": "",
+        "featureId": "Top",
+        "nodeId": "MVA24WI4pffnMT3to",
+        "featureType": "defaultPlane",
+        "returnAfterSubfeatures": false,
+        "subFeatures": [],
+        "parameterLibraries": [],
+        "suppressionState": null
+      },
+      {
+        "btType": "BTMFeature-134",
+        "name": "Front",
+        "suppressed": false,
+        "parameters": [],
+        "namespace": "",
+        "featureId": "Front",
+        "nodeId": "MTLrLz2Z/2ychXFPP",
+        "featureType": "defaultPlane",
+        "returnAfterSubfeatures": false,
+        "subFeatures": [],
+        "parameterLibraries": [],
+        "suppressionState": null
+      },
+      {
+        "btType": "BTMFeature-134",
+        "name": "Right",
+        "suppressed": false,
+        "parameters": [],
+        "namespace": "",
+        "featureId": "Right",
+        "nodeId": "MUgqiP9lV1BMeDw8X",
+        "featureType": "defaultPlane",
+        "returnAfterSubfeatures": false,
+        "subFeatures": [],
+        "parameterLibraries": [],
+        "suppressionState": null
+      }
+    ]
+  }
+}

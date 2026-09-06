@@ -1,0 +1,25 @@
+{
+  "name": "suppress-unconfirmed",
+  "route": "POST /api/suppress",
+  "requestBody": {
+    "context": {
+      "documentId": "a11ce0000000000000000007",
+      "workspaceOrVersion": "w",
+      "workspaceOrVersionId": "a11ce0000000000000000044",
+      "elementId": "a11ce0000000000000000135",
+      "complete": true
+    },
+    "itemId": "native:FRS8YirWVn4peOr_0:referenceAlignVerifyImage",
+    "suppressed": true
+  },
+  "status": 400,
+  "error": {
+    "message": "Suppressing a sketch always needs confirm: true in the request. This one is asked every time, whatever the confirm-before-write setting says.",
+    "code": "CONFIRM_REQUIRED",
+    "expose": {
+      "action": "Suppressing a sketch"
+    },
+    "body": null
+  },
+  "onshapeTraffic": []
+}

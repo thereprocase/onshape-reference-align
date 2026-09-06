@@ -1,0 +1,35 @@
+{
+  "featureId": "FNLdTj4CePGtxYI_0",
+  "featureStatus": "OK",
+  "accepted": true,
+  "storedPlane": {
+    "btType": "BTMParameterQueryList-148",
+    "libraryRelationType": "DEFAULT",
+    "queries": [
+      {
+        "btType": "BTMIndividualQuery-138",
+        "queryString": "query=qCreatedBy(makeId(\"Right\"), EntityType.FACE);",
+        "nodeId": "MOr1BR5c4P5gdyXn/",
+        "deterministicIds": [
+          "JEC"
+        ],
+        "queryStatement": null
+      }
+    ],
+    "filter": {
+      "btType": "BTAndFilter-110",
+      "operand1": {
+        "btType": "BTEntityTypeFilter-124",
+        "entityType": "FACE"
+      },
+      "operand2": {
+        "btType": "BTGeometryFilter-130",
+        "geometryType": "PLANE"
+      }
+    },
+    "nodeId": "M/Kby3lMCqa570G6s",
+    "parameterId": "plane",
+    "parameterName": ""
+  },
+  "captureFile": "27-p2-right-b.json"
+}

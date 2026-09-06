@@ -1,0 +1,33 @@
+{
+  "name": "p1-resolve-top",
+  "method": "POST",
+  "path": "/partstudios/d/a11ce0000000000000000064/w/a11ce0000000000000000095/e/a11ce0000000000000000154/featurescript",
+  "requestBody": {
+    "script": "function(context is Context, queries) { return transientQueriesToStrings(evaluateQuery(context, qCreatedBy(makeId(\"Top\"), EntityType.FACE))); }",
+    "queries": {}
+  },
+  "status": 200,
+  "data": {
+    "btType": "BTFeatureScriptEvalResponse-1859",
+    "rejectMicroversionSkew": false,
+    "microversionSkew": false,
+    "result": {
+      "btType": "com.belmonttech.serialize.fsvalue.BTFSValueArray",
+      "typeTag": "",
+      "value": [
+        {
+          "btType": "com.belmonttech.serialize.fsvalue.BTFSValueString",
+          "typeTag": "",
+          "value": "JDC"
+        }
+      ]
+    },
+    "notices": [],
+    "sourceMicroversion": "a11ce0000000000000000126",
+    "libraryVersion": 3070,
+    "serializationVersion": "1.2.21",
+    "console": ""
+  },
+  "ok": true,
+  "featureStatus": "UNKNOWN"
+}

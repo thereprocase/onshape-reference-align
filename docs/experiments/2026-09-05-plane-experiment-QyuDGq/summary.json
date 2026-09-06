@@ -1,0 +1,314 @@
+{
+  "generatedAt": "2026-09-05T23:48:43.057Z",
+  "phases": [
+    {
+      "id": "P1",
+      "attempts": [
+        {
+          "plane": "Top",
+          "ids": [],
+          "captureFile": "04-p1-resolve-top.json",
+          "ok": false,
+          "topIsJDC": false
+        },
+        {
+          "plane": "Front",
+          "ids": [],
+          "captureFile": "05-p1-resolve-front.json",
+          "ok": false
+        },
+        {
+          "plane": "Right",
+          "ids": [],
+          "captureFile": "06-p1-resolve-right.json",
+          "ok": false
+        }
+      ],
+      "accepted": false
+    },
+    {
+      "id": "P2",
+      "attempts": [
+        {
+          "plane": "Front",
+          "variant": "a",
+          "accepted": false,
+          "reason": "P1 did not resolve one plane."
+        },
+        {
+          "plane": "Front",
+          "variant": "b",
+          "featureId": "FLKg1vE4LtQvzcv_0",
+          "featureStatus": "OK",
+          "accepted": true,
+          "storedPlane": {
+            "btType": "BTMParameterQueryList-148",
+            "libraryRelationType": "DEFAULT",
+            "queries": [
+              {
+                "btType": "BTMIndividualQuery-138",
+                "queryStatement": null,
+                "queryString": "query=qCreatedBy(makeId(\"Front\"), EntityType.FACE);",
+                "nodeId": "MWdBBssIWMYSBmEjI",
+                "deterministicIds": [
+                  "JCC"
+                ]
+              }
+            ],
+            "filter": {
+              "btType": "BTAndFilter-110",
+              "operand1": {
+                "btType": "BTEntityTypeFilter-124",
+                "entityType": "FACE"
+              },
+              "operand2": {
+                "btType": "BTGeometryFilter-130",
+                "geometryType": "PLANE"
+              }
+            },
+            "nodeId": "Mh94kOscSXJCFCzC0",
+            "parameterId": "plane",
+            "parameterName": ""
+          },
+          "captureFile": "12-p2-front-b.json"
+        },
+        {
+          "plane": "Front",
+          "variant": "c",
+          "accepted": false,
+          "reason": "P1 did not resolve one plane."
+        },
+        {
+          "plane": "Right",
+          "variant": "a",
+          "accepted": false,
+          "reason": "P1 did not resolve one plane."
+        },
+        {
+          "plane": "Right",
+          "variant": "b",
+          "featureId": "FaEjWd6l8Smdw4z_0",
+          "featureStatus": "OK",
+          "accepted": true,
+          "storedPlane": {
+            "btType": "BTMParameterQueryList-148",
+            "libraryRelationType": "DEFAULT",
+            "queries": [
+              {
+                "btType": "BTMIndividualQuery-138",
+                "queryStatement": null,
+                "queryString": "query=qCreatedBy(makeId(\"Right\"), EntityType.FACE);",
+                "nodeId": "MdWStmaSoErl4vNW5",
+                "deterministicIds": [
+                  "JEC"
+                ]
+              }
+            ],
+            "filter": {
+              "btType": "BTAndFilter-110",
+              "operand1": {
+                "btType": "BTEntityTypeFilter-124",
+                "entityType": "FACE"
+              },
+              "operand2": {
+                "btType": "BTGeometryFilter-130",
+                "geometryType": "PLANE"
+              }
+            },
+            "nodeId": "MWu9ZPX8YmzyMmRy0",
+            "parameterId": "plane",
+            "parameterName": ""
+          },
+          "captureFile": "16-p2-right-b.json"
+        },
+        {
+          "plane": "Right",
+          "variant": "c",
+          "accepted": false,
+          "reason": "P1 did not resolve one plane."
+        }
+      ],
+      "accepted": true
+    },
+    {
+      "id": "P3",
+      "accepted": false,
+      "reason": "P1 did not resolve Top."
+    },
+    {
+      "id": "P4",
+      "accepted": true,
+      "creation": {
+        "featureId": "FlXxruLPDB7B9T3_0",
+        "featureStatus": "OK",
+        "accepted": true,
+        "storedPlane": {
+          "btType": "BTMParameterQueryList-148",
+          "libraryRelationType": "DEFAULT",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S5.7$FrontplaneOpS9$queryTypeS5$DUMMY\",id);",
+              "nodeId": "M5u5RUSoXm9JGBQOQ",
+              "deterministicIds": [
+                "JCC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTOrFilter-167",
+            "operand1": {
+              "btType": "BTOrFilter-167",
+              "operand1": {
+                "btType": "BTAndFilter-110",
+                "operand1": {
+                  "btType": "BTGeometryFilter-130",
+                  "geometryType": "PLANE"
+                },
+                "operand2": {
+                  "btType": "BTFlatSheetMetalFilter-3018",
+                  "allows": "MODEL_ONLY"
+                }
+              },
+              "operand2": {
+                "btType": "BTAndFilter-110",
+                "operand1": {
+                  "btType": "BTAndFilter-110",
+                  "operand1": {
+                    "btType": "BTSMDefinitionEntityTypeFilter-1651",
+                    "smDefinitionEntityType": "FACE"
+                  },
+                  "operand2": {
+                    "btType": "BTFlatSheetMetalFilter-3018",
+                    "allows": "MODEL_AND_FLATTENED"
+                  }
+                },
+                "operand2": {
+                  "btType": "BTGeometryFilter-130",
+                  "geometryType": "PLANE"
+                }
+              }
+            },
+            "operand2": {
+              "btType": "BTBodyTypeFilter-112",
+              "bodyType": "MATE_CONNECTOR"
+            }
+          },
+          "nodeId": "MAuHfsZMGvs5fwB/D",
+          "parameterId": "sketchPlane",
+          "parameterName": ""
+        },
+        "captureFile": "20-p4-create-front-sketch.json"
+      },
+      "reference": {
+        "featureId": "Fi0UiokYKdvQzmk_0",
+        "featureStatus": "OK",
+        "accepted": true,
+        "storedPlane": {
+          "btType": "BTMParameterQueryList-148",
+          "libraryRelationType": "DEFAULT",
+          "queries": [
+            {
+              "btType": "BTMIndividualQuery-138",
+              "queryStatement": null,
+              "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S5.7$FrontplaneOpS9$queryTypeS5$DUMMY\",id);",
+              "nodeId": "MqdhSrCViBxOaK7aK",
+              "deterministicIds": [
+                "JCC"
+              ]
+            }
+          ],
+          "filter": {
+            "btType": "BTAndFilter-110",
+            "operand1": {
+              "btType": "BTEntityTypeFilter-124",
+              "entityType": "FACE"
+            },
+            "operand2": {
+              "btType": "BTGeometryFilter-130",
+              "geometryType": "PLANE"
+            }
+          },
+          "nodeId": "MEu/KTqavEK6G1tMN",
+          "parameterId": "plane",
+          "parameterName": ""
+        },
+        "captureFile": "24-p4-reference-image.json"
+      }
+    },
+    {
+      "id": "P5",
+      "accepted": true,
+      "featureId": "FLKg1vE4LtQvzcv_0",
+      "featureStatus": "OK",
+      "requestedPlane": {
+        "btType": "BTMParameterQueryList-148",
+        "libraryRelationType": "DEFAULT",
+        "queries": [
+          {
+            "btType": "BTMIndividualQuery-138",
+            "queryStatement": null,
+            "queryString": "query=qCreatedBy(makeId(\"Right\"), EntityType.FACE);",
+            "nodeId": "MdWStmaSoErl4vNW5",
+            "deterministicIds": [
+              "JEC"
+            ]
+          }
+        ],
+        "filter": {
+          "btType": "BTAndFilter-110",
+          "operand1": {
+            "btType": "BTEntityTypeFilter-124",
+            "entityType": "FACE"
+          },
+          "operand2": {
+            "btType": "BTGeometryFilter-130",
+            "geometryType": "PLANE"
+          }
+        },
+        "nodeId": "MWu9ZPX8YmzyMmRy0",
+        "parameterId": "plane",
+        "parameterName": ""
+      },
+      "storedPlane": {
+        "btType": "BTMParameterQueryList-148",
+        "libraryRelationType": "DEFAULT",
+        "queries": [
+          {
+            "btType": "BTMIndividualQuery-138",
+            "queryStatement": null,
+            "queryString": "query=qCompressed(1.0,\"%B5$QueryM4Sa$entityTypeBa$EntityTypeS4$FACESb$historyTypeS8$CREATIONSb$operationIdB2$IdA1S5.7$RightplaneOpS9$queryTypeS5$DUMMY\",id);",
+            "nodeId": "MFIizfgcicqfGWH0u",
+            "deterministicIds": [
+              "JEC"
+            ]
+          }
+        ],
+        "filter": {
+          "btType": "BTAndFilter-110",
+          "operand1": {
+            "btType": "BTEntityTypeFilter-124",
+            "entityType": "FACE"
+          },
+          "operand2": {
+            "btType": "BTGeometryFilter-130",
+            "geometryType": "PLANE"
+          }
+        },
+        "nodeId": "M8dA3frs8M8UyUtuo",
+        "parameterId": "plane",
+        "parameterName": ""
+      },
+      "storedPlaneMatches": true
+    }
+  ],
+  "completed": true,
+  "publicFallback": true,
+  "documentId": "a11ce0000000000000000064",
+  "workspaceId": "a11ce0000000000000000095",
+  "partStudioId": "a11ce0000000000000000154",
+  "featureStudioId": "a11ce0000000000000000148",
+  "imageElementId": "a11ce0000000000000000011",
+  "accepted": false
+}
