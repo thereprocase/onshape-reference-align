@@ -5,18 +5,71 @@
 
 Scale and rotate a reference image using distances and directions you know.
 
-## Get the desktop app
+## 1. Download the app for your computer
 
-Download from [GitHub Releases](https://github.com/thereprocase/onshape-reference-align/releases).
-Native Windows, Linux, Apple Silicon Mac and Intel Mac builds pass automated
-tests and packaged-app smoke checks. Read the release notes for verification
-details and remaining first-launch/user-testing limits.
+Reference Align is a small companion app that opens in your browser and connects
+to Onshape. It runs on your computer: you do not need to install Node, set up a
+website, register an Onshape extension, or use developer tools.
 
-Choose the ZIP for Windows, Linux, Mac Apple Silicon, or Mac Intel under
-**Assets**. The automatically generated **Source code** downloads are for
-developers, not the ready-to-run app. Extract the whole ZIP, open
-**START-HERE.html**, and follow its launcher and Onshape connection steps.
-No Node installation or website setup is needed.
+| Your computer | Download | File to open after extracting |
+| --- | --- | --- |
+| Windows — Intel/AMD | [Download for Windows Intel/AMD](https://github.com/thereprocase/onshape-reference-align/releases/latest/download/reference-align-windows-x64.zip) | `START-REFERENCE-ALIGN.cmd` |
+| Mac — Apple chip | [Download for Mac Apple chip](https://github.com/thereprocase/onshape-reference-align/releases/latest/download/reference-align-macos-arm64.zip) | `START-REFERENCE-ALIGN.command` |
+| Mac — Intel | [Download for Mac Intel](https://github.com/thereprocase/onshape-reference-align/releases/latest/download/reference-align-macos-x64.zip) | `START-REFERENCE-ALIGN.command` |
+| Linux — Intel/AMD | [Download for Linux Intel/AMD](https://github.com/thereprocase/onshape-reference-align/releases/latest/download/reference-align-linux-x64.zip) | `START-REFERENCE-ALIGN.sh` |
+
+Not sure which Mac you have? Open the **Apple menu → About This Mac**. If it
+says **Chip: Apple M…**, choose **Mac Apple chip**. If it says
+**Processor: Intel…**, choose **Mac Intel**.
+
+These are desktop downloads; there is no Android app or native Windows ARM
+package. On the [release page](https://github.com/thereprocase/onshape-reference-align/releases/latest),
+choose one of these app ZIPs, not GitHub's **Source code** archives.
+
+## 2. Extract the ZIP and open the launcher
+
+1. Extract the **whole ZIP** into a folder: **Extract All…** on Windows,
+   double-click the ZIP on Mac, or use your archive manager on Linux.
+2. Open the `START-REFERENCE-ALIGN` file listed in the table above. Do not
+   run it from inside the ZIP or move it away from the other extracted files.
+3. Your browser opens the app. Keep the launcher's window open while you work;
+   closing it stops the companion app.
+
+Need help opening the launcher? Follow the
+[step-by-step beginner guide](https://thereprocase.github.io/onshape-reference-align/START-HERE.html).
+The same guide is included as **START-HERE.html** in the extracted folder, so
+you can open it without an internet connection. It includes Linux permission
+help and what to do if your browser does not open automatically.
+
+The app is **unsigned**, and the Mac downloads are **not notarized**, so your
+computer may show a first-launch warning. Only open a download you trust from
+this project's release page. Follow the guide's platform-specific steps; do
+not disable antivirus, SmartScreen, Gatekeeper, or other system protections.
+On a managed computer, ask your administrator if opening the app is blocked.
+
+## 3. Connect Onshape and align your first image
+
+1. Follow the browser's connection wizard. It links to Onshape's API-key page
+   and explains how to enable **Read documents** and **Write documents**.
+   Create the key in the Onshape account that can edit your document. Copy
+   both the **access key** and **secret key** into the app—not your Onshape
+   password. Keep both keys private and never post them in an issue or screenshot.
+   Press **Test connection**, then **Save and continue**.
+2. In Onshape, open the **Part Studio** where you want the image. Copy its
+   browser address, paste it into the app's **Document** panel, and load it.
+3. Load a local image in the app, then reopen **Document**. Choose its
+   **Plane** and press **Install into this document**. This creates the
+   calibrated image feature for you; you do not need to paste FeatureScript
+   or write code. If you choose an existing Onshape image tab instead, press
+   **Load selected Onshape image** after installing. If a calibrated image
+   feature already exists, select that target instead of reinstalling it.
+4. Pick **S1** and **S2** on two points in the image whose real distance you
+   know, then enter that distance and its unit. Open **Rotation** if you also
+   want to straighten the image. **Preview** the result, then **Apply** and
+   confirm the change to Onshape.
+
+You can also choose **Try an image without connecting** to practice locally.
+Connecting is only needed when you want to load from or write to Onshape.
 
 ![Reference Align showing its source image, calibration tools and aligned preview](docs/images/workspace-preview.png)
 
@@ -31,9 +84,14 @@ No Node installation or website setup is needed.
 5. Keep `S1`, `S2`, `R1`, `R2`, or the image center fixed while the image moves.
 6. Preview, then write the calculated placement to Onshape.
 
-## What this package contains
+## Technical details and development
 
-- A dependency-free Node 22 web server.
+The sections below are reference information for developers and advanced use.
+They are not required to use the downloaded desktop app.
+
+### What this package contains
+
+- A dependency-free Node-based web server; desktop downloads include the runtime.
 - A pixel-accurate browser picker with zoom, pan, loupe, subpixel coordinates, separate scale/rotation pairs, and an aligned preview.
 - A supported Onshape write path through the included **Calibrated Reference Image** FeatureScript.
 - OAuth, signed API-key, Basic local-test API-key, and bearer-token server authentication modes.
@@ -47,24 +105,12 @@ Onshape does not expose individual raster pixels as sketch geometry. Reference A
 
 The supported integration uses `featurescript/ReferenceImage.fs`. Directly rewriting a native `Insert image` entity depends on Onshape's internal serialized sketch format and remains disabled by default.
 
-## Start using the app — no developer tools needed
-
-Download your platform’s ZIP and extract the whole folder (**Extract All…** on
-Windows). Open **START-REFERENCE-ALIGN.cmd** (Windows),
-**START-REFERENCE-ALIGN.command** (macOS), or **START-REFERENCE-ALIGN.sh** (Linux).
-Keep its app window open while you work in the browser.
-Open **START-HERE.html** in the extracted folder for the complete
-offline guide. The [project website](https://thereprocase.github.io/onshape-reference-align/)
-provides the browser-readable guide; the HTML file
-in the source tree is its source, not a rendered GitHub documentation page.
-
-The connection wizard guides you through creating an Onshape API key and
-entering it in the app. You do not need Node, a terminal, credential-file edits,
-or an Onshape extension registration for the standalone app.
+## Build verification and distribution
 
 Use the public [release page](https://github.com/thereprocase/onshape-reference-align/releases)
-for downloads and checksums. macOS packages are built and smoke-tested natively
-for both Apple Silicon and Intel. An unaided real-person first-launch test
+for downloads and checksums. Windows, Linux, Apple Silicon Mac and Intel Mac
+packages pass automated tests and native packaged-app smoke checks. Read the
+release notes for the verification details. An unaided real-person first-launch test
 remains outstanding; automated checks do not validate desktop trust prompts.
 See
 [`docs/DISTRIBUTION.md`](docs/DISTRIBUTION.md) for the SmartScreen/Gatekeeper
